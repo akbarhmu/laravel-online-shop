@@ -1,1 +1,97 @@
-body{background-color:#fff}#auth{height:100vh;overflow-x:hidden}#auth #auth-right{height:100%;background:url(../../images/bg/4853433.jpg),linear-gradient(90deg,#2d499d,#3f5491)}#auth #auth-left{padding:5rem 8rem}#auth #auth-left .auth-title{font-size:4rem;margin-bottom:1rem}#auth #auth-left .auth-subtitle{font-size:1.7rem;line-height:2.5rem;color:#a8aebb}#auth #auth-left .auth-logo{margin-bottom:7rem}#auth #auth-left .auth-logo img{height:2rem}@media screen and (max-width:767px){#auth #auth-left{padding:5rem}}
+body {
+    background-color: #fff;
+}
+
+#auth {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#auth #auth-right {
+    height: 100%;
+    background: url(../../images/bg/marvin-meyer-SYTO3xs06fU-unsplash.webp),
+        linear-gradient(90deg, #2d499d, #3f5491);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150% auto;
+    filter: blur(0.5px);
+}
+
+#auth #auth-right .auth-bg-attribution {
+    position: absolute;
+    bottom: 10px;
+    right: 19px;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 4px;
+    border-radius: 5px 5px 5px 5px;
+    color: black;
+    font-weight: bold;
+}
+
+#auth #auth-right .auth-bg-attribution a {
+    text-decoration: none;
+    color: #435ebe;
+}
+
+#auth #auth-left {
+    padding: 5rem 8rem;
+}
+
+#auth #auth-left .auth-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+#auth #auth-left .auth-subtitle {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    color: #a8aebb;
+}
+
+#auth #auth-left .auth-logo {
+    margin-bottom: 7rem;
+}
+
+#auth #auth-left .auth-logo img {
+    height: 2rem;
+}
+
+#auth #auth-left .auth-logo .text-logo {
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: #435ebe;
+    font-family: Nunito;
+    font-weight: 700;
+}
+
+.register .logo-register {
+    margin-bottom: 1rem !important;
+}
+.register .auth-title {
+    margin-bottom: 1rem !important;
+}
+.register .auth-subtitle {
+    margin-bottom: 2rem !important;
+}
+
+@media screen and (max-width: 767px) {
+    #auth {
+        height: 100% !important;
+    }
+    #auth #auth-left {
+        padding: 2.5rem;
+    }
+    #auth #auth-left .auth-logo {
+        margin-bottom: 4rem;
+    }
+    .auth-subtitle {
+        display: none;
+    }
+    #auth #auth-left .auth-logo .text-logo {
+        font-size: 0.9rem;
+    }
+    #auth #auth-left .auth-logo {
+        margin-bottom: 0rem;
+    }
+}
