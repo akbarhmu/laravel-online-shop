@@ -1,27 +1,35 @@
 @extends('layouts.guest')
+@section('title', __('Login'))
 @section('content')
 <div id="auth-left">
     <div class="auth-logo">
         {{-- <a href="/"><img src="{{ asset('/images/logo/logo.png') }}" alt="Logo"></a> --}}
-        <a href="/" class="text-logo"><i class="bi bi-cart4"></i>{{ config('app.name', 'Laravel') }}</a>
+        <a href="{{route('index')}}" class="text-logo"><i class="bi bi-cart4"></i>{{ config('app.name', 'Laravel') }}</a>
     </div>
     <h1 class="auth-title">{{__('Login')}}.</h1>
     <p class="auth-subtitle mb-5">{{__('Log in with your data that you entered during registration.')}}</p>
 
     @if (session('status'))
-        <div class="mb-4 font-medium text-sm text-green-600">
+        <div class="alert alert-success">
             {{ session('status') }}
         </div>
     @endif
-    @if ($errors->any())
+    @if (session('error'))
         <div class="alert alert-danger">
-            {{ $errors->first() }}
+            <div class="text-danger">
+                {{__(session('error'))}}
+            </div>
         </div>
     @endif
-    <form action="" method="POST">
+    @if (session('errors'))
+        <div class="alert alert-danger">
+            {{__($errors->first())}}
+        </div>
+    @endif
+    <form action="{{route('auth.store')}}" method="POST">
         @csrf
         <div class="form-group position-relative has-icon-left mb-4">
-            <input class="form-control form-control-xl" type="email" name="email" placeholder="{{__('Email')}}" value="{{ old('email') }}">
+            <input class="form-control form-control-xl @error('email') is-invalid @enderror" type="email" name="email" placeholder="{{__('Email')}}" value="{{ old('email') }}">
             <div class="form-control-icon">
                 <i class="bi bi-person"></i>
             </div>
@@ -41,7 +49,7 @@
         <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">{{__('Login')}}</button>
     </form>
     <div class="text-center mt-5 text-lg fs-4">
-        <p class="text-gray-600">{{__("Don't have an account?")}} <a href=""
+        <p class="text-gray-600">{{__("Don't have an account?")}} <a href="{{route('auth.create')}}"
                 class="font-bold">{{__('Register')}}</a>.</p>
         @if (Route::has('password.request'))
             <p><a class="font-bold" href="{{route('password.request')}}">Forgot password?</a>.</p>
