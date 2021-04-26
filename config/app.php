@@ -43,6 +43,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Support Email
+    |--------------------------------------------------------------------------
+    |
+    | This value is the support email address of your application. This value is used when the
+    | framework needs to place the support email address name in a notification or
+    | any other location as required by the application or its packages.
+    |
+    */
+
+    'support_email' => env('APP_SUPPORTEMAIL', 'support@mail.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
     |
