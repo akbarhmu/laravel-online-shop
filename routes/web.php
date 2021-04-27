@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,4 +42,9 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', __('A new verification link has been sent to the email address you provided during registration.'));
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+// Dashboard
+Route::middleware(['auth', 'admin', 'verified'])->group(function () {
+    Route::prefix('dashboard')->group(function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+    });
 });

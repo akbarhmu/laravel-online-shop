@@ -1,0 +1,16 @@
+.profile-card {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    .header-name {
+        display: none;
+    }
+
+    .profile-card {
+        display: block !important;
+    }
+    .dropdown-menu {
+        min-width: unset !important;
+    }
+}
