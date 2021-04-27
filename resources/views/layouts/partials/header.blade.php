@@ -62,7 +62,10 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="{{route('auth.destroy')}}"><i class="icon-mid bi bi-box-arrow-left me-2"></i> {{__('Logout')}}</a>
+                                        <form action="{{route('auth.destroy')}}" method="post">
+                                            @csrf
+                                            <button class="dropdown-item" type="submit"><i class="icon-mid bi bi-box-arrow-left me-2"></i> {{__('Logout')}}</button>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
