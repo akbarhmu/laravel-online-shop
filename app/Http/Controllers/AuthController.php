@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\MessageBag;
 
 class AuthController extends Controller
@@ -27,11 +28,7 @@ class AuthController extends Controller
 
         if(Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']], (isset($validatedData['remember'])?'true':'false'))){
             $request->session()->regenerate();
-            if(Auth::user()->roles=='admin'){
-                return redirect()->route('dashboard.index');
-            } else {
-                return redirect()->route('index');
-            }
+            return redirect()->intended();
         } else {
             $errors = new MessageBag(['failed' => ['auth.failed']]);
             return redirect()->route('auth.index')->withErrors($errors)->withInput();
