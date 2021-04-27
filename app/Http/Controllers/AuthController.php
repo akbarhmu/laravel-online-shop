@@ -27,7 +27,11 @@ class AuthController extends Controller
 
         if(Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']], (isset($validatedData['remember'])?'true':'false'))){
             $request->session()->regenerate();
-            echo 'Selamat Datang '.Auth::user()->name.'!';
+            if(Auth::user()->roles=='admin'){
+                return redirect()->route('dashboard.index');
+            } else {
+                return redirect()->route('index');
+            }
         } else {
             $errors = new MessageBag(['failed' => ['auth.failed']]);
             return redirect()->route('auth.index')->withErrors($errors)->withInput();
