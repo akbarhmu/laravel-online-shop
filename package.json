@@ -21,6 +21,9 @@
         "popper.js": "^1.16.1",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
         "tailwindcss": "^2.0.1"
     }
 }
