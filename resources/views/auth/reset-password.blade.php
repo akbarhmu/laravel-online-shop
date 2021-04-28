@@ -11,13 +11,13 @@
             <form method="POST" action="/reset-password">
                 @csrf
 
-                <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                <input type="hidden" name="token" value="{{ $token }}">
 
                 <div class="form-group">
                     <x-jet-label value="{{ __('Email') }}" />
 
                     <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email"
-                                 :value="old('email', $request->email)" required autofocus />
+                                 :value="old('email', Request::get('email'))" required autofocus />
                     <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
 
