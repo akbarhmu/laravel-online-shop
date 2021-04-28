@@ -17,7 +17,7 @@ class AlterUsersTable extends Migration
             $table->string('address')->after('password')->nullable();
             $table->unsignedBigInteger('city_id')->after('address')->nullable();
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->integer('isAdmin')->default(0)->after('city_id');
+            $table->boolean('isAdmin')->default(false)->after('city_id');
         });
     }
 

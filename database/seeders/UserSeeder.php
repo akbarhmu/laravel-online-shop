@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@mail.com',
             'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'password' => Hash::make('admin'),
-            'isAdmin' => 1,
+            'isAdmin' => true,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
