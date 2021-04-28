@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f888bfcee5161ae06dfa7f82ecfa2a0b",
+    "content-hash": "c0a523c5d41cd08edbeee860f5a0a404",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1090,6 +1090,51 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "laravel-lang/lang",
+            "version": "8.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Lang/lang.git",
+                "reference": "a453760fec76a52b2c7eb13ecbdb5eefc2ab0cd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/a453760fec76a52b2c7eb13ecbdb5eefc2ab0cd3",
+                "reference": "a453760fec76a52b2c7eb13ecbdb5eefc2ab0cd3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "suggest": {
+                "andrey-helldar/laravel-lang-publisher": "Easy installation and update of translation files for your project",
+                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laravel-Lang Team"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "support": {
+                "issues": "https://github.com/Laravel-Lang/lang/issues",
+                "source": "https://github.com/Laravel-Lang/lang/tree/8.0.0"
+            },
+            "time": "2020-11-30T21:13:00+00:00"
         },
         {
             "name": "laravel/fortify",
