@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('store.index');
 })->name('index');
 
 Route::get('/login', [AuthController::class, 'index'])->name('auth.index');
@@ -46,5 +48,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::resource('products', ProductController::class);
+        Route::resource('categories', CategoryController::class);
     });
 });

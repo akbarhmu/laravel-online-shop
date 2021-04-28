@@ -47,20 +47,28 @@
             <div id="main-content">
 
                 <div class="page-heading">
-                    <div class="page-title">
+                    <div class="page-title mb-2">
                         <div class="row">
                             <div class="col-12 col-md-6 order-md-1 order-last">
                                 <h3>@yield('title')</h3>
                                 <p class="text-subtitle text-muted">@yield('subtitle')</p>
                             </div>
-                            <div class="col-12 col-md-6 order-md-2 order-first">
-                                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">@yield('breadcrumb')
-                                        </li>
-                                    </ol>
-                                </nav>
+                            @yield('adittional-buttons')
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                @if (session('status'))
+                                    <div class="alert alert-success mt-2">
+                                        {{session('status')}}
+                                    </div>
+                                @endif
+                                @if (session('error'))
+                                    <div class="alert alert-danger mt-2">
+                                        <div class="text-danger">
+                                            {{__(session('error'))}}
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -73,9 +81,37 @@
             </div>
         </div>
     </div>
-</body>
+    <script src="{{asset('vendors/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendors/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @yield('additional-scripts')
+    <script>
+        $( document ).ready(function() {
+            window.setTimeout(function() {
+                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+                });
+            }, 5000);
+        });
+        $('.delete-confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            swal({
+                title: `Are you sure you want to delete ${name}?`,
+                text: "If you delete this, it will be gone forever.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                form.submit();
+                }
+            });
+        });
+    </script>
+</body>
 </html>

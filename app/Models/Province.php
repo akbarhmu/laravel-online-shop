@@ -13,4 +13,6 @@ class Province extends Model
         'province_id',
         'province',
     ];
+
+    protected $primaryKey = 'province_id';
 }

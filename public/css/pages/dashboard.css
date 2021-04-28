@@ -1,7 +1,27 @@
 .profile-card {
     display: none;
 }
+.adittional-buttons {
+    height: 100%;
+}
+.wrapper-button {
+    vertical-align: middle;
+}
+.button {
+    display: inline-block;
+    position: relative;
+    float: right;
+}
 
+.adittional-buttons {
+    display: table;
+    width: 100%;
+}
+
+.wrapper-button {
+    display: table-cell;
+    vertical-align: middle;
+}
 @media screen and (max-width: 550px) {
     .header-name {
         display: none;
