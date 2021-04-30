@@ -9,7 +9,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "kavist/rajaongkir": "1.1",
+        "kavist/rajaongkir": "dev-staging",
         "laravel-lang/lang": "8.0",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.3",
@@ -61,5 +61,9 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/Gasiyu/rajaongkir"
+    }]
 }
