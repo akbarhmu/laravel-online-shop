@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('city')->group(function () {
+    Route::get('/', function () {
+        $cities = City::all();
+        return response()->json($cities);
+    });
+
+    Route::get('/{id}', function ($id) {
+        $city = City::where('id',$id)->get();
+        return response()->json($city);
+    });
+
+    Route::get('/by-province/{id}', function ($id) {
+        $city = City::where('province_id',$id)->get();
+        return response()->json($city);
+    });
 });
