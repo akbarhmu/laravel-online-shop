@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\City;
+use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -33,5 +34,17 @@ Route::prefix('city')->group(function () {
     Route::get('/by-province/{id}', function ($id) {
         $city = City::where('province_id',$id)->get();
         return response()->json($city);
+    });
+});
+
+Route::prefix('province')->group(function () {
+    Route::get('/', function () {
+        $provinces = Province::all();
+        return response()->json($provinces);
+    });
+
+    Route::get('/{id}', function ($id) {
+        $province = Province::where('province_id',$id)->get();
+        return response()->json($province);
     });
 });
