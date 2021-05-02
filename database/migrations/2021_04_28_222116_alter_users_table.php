@@ -17,7 +17,9 @@ class AlterUsersTable extends Migration
             $table->string('address')->after('password')->nullable();
             $table->unsignedBigInteger('city_id')->after('address')->nullable();
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->boolean('isAdmin')->default(false)->after('city_id');
+            $table->string('subdistrict')->after('city_id')->nullable();
+            $table->string('postal_code')->after('subdistrict')->nullable();
+            $table->boolean('isAdmin')->default(false)->after('postal_code');
         });
     }
 
@@ -28,6 +30,12 @@ class AlterUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('address');
+            $table->dropColumn('city_id');
+            $table->dropColumn('subdistrict');
+            $table->dropColumn('postal_code');
+            $table->dropColumn('isAdmin');
+        });
     }
 }
