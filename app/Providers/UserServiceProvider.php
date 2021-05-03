@@ -31,5 +31,9 @@ class UserServiceProvider extends ServiceProvider
         Blade::directive('endisAdmin', function() {
             return "<?php endif; ?>";
         });
+
+        Blade::directive('rupiah', function ($expression) {
+            return "Rp. <?php echo number_format($expression, 0, ',', '.'); ?>";
+        });
     }
 }
