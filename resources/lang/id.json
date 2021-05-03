@@ -716,5 +716,18 @@
     "Subdistrict": "Kecamatan",
     "Postal Code": "Kode Pos",
     "Forgot Password": "Lupa Kata Sandi",
-    "No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Tidak masalah. Beri tahu kami alamat surel Anda dan kami akan mengirimkan surel berisi tautan pengaturan ulang kata sandi yang memungkinkan Anda memilih kata sandi yang baru."
+    "No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Tidak masalah. Beri tahu kami alamat surel Anda dan kami akan mengirimkan surel berisi tautan pengaturan ulang kata sandi yang memungkinkan Anda memilih kata sandi yang baru.",
+    "Hi": "Halo",
+    "Categories": "Kategori",
+    "Category": "Kategori",
+    "All Category": "Semua Kategori",
+    "Products Count": "Jumlah Produk",
+    "Products": "Produk",
+    "Add Category": "Tambah Kategori",
+    "Edit Category": "Rubah Kategori",
+    "Back": "Kembali",
+    "Category Name": "Nama Kategori",
+    "category name": "nama kategori",
+    "Category :category added": "Kategori :category berhasil ditambahkan",
+    "Category deleted successfully": "Kategori berhasil dihapus"
 }
