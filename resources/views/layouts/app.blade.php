@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('title') | {{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
@@ -14,30 +14,46 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
         @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @yield('css')
     </head>
-    <body class="font-sans antialiased bg-light">
-        <x-jet-banner />
-        @livewire('navigation-menu')
+    <body>
+        <div id="app">
+            <div class="main-wrapper main-wrapper-1">
+                @include('layouts.partials.header')
+                @include('layouts.partials.sidebar')
 
-        <!-- Page Heading -->
-        <header class="d-flex py-3 bg-white shadow-sm border-bottom">
-            <div class="container">
-                {{ $header }}
+                <!-- Main Content -->
+                @yield('content')
+                <footer class="main-footer">
+                    <div class="footer-left">
+                        <x-copyright />
+                    </div>
+                    <div class="footer-right">
+
+                    </div>
+                </footer>
             </div>
-        </header>
-
-        <!-- Page Content -->
-        <main class="container my-5">
-            {{ $slot }}
-        </main>
+        </div>
 
         @stack('modals')
 
         @livewireScripts
 
         @stack('scripts')
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}"></script>
+
+        @yield('js')
+
+        <script>
+            $(document).ready(function(){
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove();
+                    });
+                }, 5000);
+            });
+        </script>
     </body>
 </html>
