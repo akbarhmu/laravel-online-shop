@@ -8,10 +8,10 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">{{__('Dashboard')}}</li>
-            <li class="active"><a class="nav-link" href="{{route('dashboard')}}"><i class="fas fa-fire"></i> <span>{{__('Dashboard')}}</span></a></li>
+            <li class="{{Custom::set_active(['dashboard'])}}"><a class="nav-link" href="{{route('dashboard')}}"><i class="fas fa-fire"></i> <span>{{__('Dashboard')}}</span></a></li>
 
             <li class="menu-header">{{__('Master')}}</li>
-            <li><a class="nav-link" href="{{route('categories.index')}}"><i class="fas fa-star"></i> <span>{{__('Categories')}}</span></a></li>
+            <li class="{{Custom::set_active(['dashboard/categories*'])}}"><a class="nav-link" href="{{route('categories.index')}}"><i class="fas fa-star"></i> <span>{{__('Categories')}}</span></a></li>
             <li><a class="nav-link" href="blank.html"><i class="fas fa-box"></i> <span>{{__('Products')}}</span></a></li>
 
             <li class="menu-header">{{__('Transaction')}}</li>
