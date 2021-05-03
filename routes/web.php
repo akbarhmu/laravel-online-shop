@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\dashboard\CategoryController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -27,6 +28,15 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::prefix('categories')->group(function(){
+            Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
+            Route::post('/', [CategoryController::class, 'store'])->name('categories.store');
+            Route::get('/create', [CategoryController::class, 'create'])->name('categories.create');
+            Route::get('/{category}', [CategoryController::class, 'show'])->name('categories.show');
+            Route::patch('/{category}', [CategoryController::class, 'update'])->name('categories.update');
+            Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+            Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+        });
     });
 });
 
