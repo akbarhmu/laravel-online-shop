@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class UserServiceProvider extends ServiceProvider
@@ -23,6 +24,12 @@ class UserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::directive('isAdmin', function() {
+            return "<?php if(Auth::user()->isAdmin: ?>";
+        });
+
+        Blade::directive('endisAdmin', function() {
+            return "<?php endif; ?>";
+        });
     }
 }
