@@ -5,6 +5,7 @@ namespace App\Http\Controllers\dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,7 +54,17 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        Category::find($category->id)->delete();
-        return back()->with('status', __('Category deleted successfully'));
+        $category = Category::where('id', $category->id)->first();
+
+        if($category != null){
+            try{
+                $category->delete();
+                return back()->with('status', __('Category deleted successfully'));
+            }catch(Exception $e){
+                return back()->with('error', "Category can't be deleted");
+            }
+        }
+
+        return back()->with('error', __("Category doesn't exist"));
     }
 }
