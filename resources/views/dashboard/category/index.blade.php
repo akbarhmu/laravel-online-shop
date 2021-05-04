@@ -17,8 +17,13 @@
               </div>
               <div class="card-body p-2">
                 @if (session('status'))
-                    <div class="alert alert-success mb-3 rounded-0" role="alert">
+                    <div class="alert alert-success mb-3" role="alert">
                         {{ session('status') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger mb-3" role="alert">
+                        {{ session('error') }}
                     </div>
                 @endif
                 <div class="table-responsive">

@@ -16,6 +16,16 @@
                 <h4>{{__('Edit Category')}}</h4>
               </div>
               <div class="card-body">
+                @if (session('status'))
+                    <div class="alert alert-success mb-3" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger mb-3" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <form action="{{route('categories.update', $category->id)}}" method="post" class="need-validation">
                     @csrf
                     @method('PATCH')
