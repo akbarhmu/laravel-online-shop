@@ -44,6 +44,8 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}"></script>
 
+        @stack('scripts-after')
+
         @yield('js')
     </body>
 </html>
