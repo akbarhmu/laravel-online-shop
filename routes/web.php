@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
+use App\Http\Controllers\dashboard\ProductController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -36,6 +37,15 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
             Route::patch('/{category}', [CategoryController::class, 'update'])->name('categories.update');
             Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
             Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+        });
+
+        Route::prefix('products')->group(function(){
+            Route::get('/', [ProductController::class, 'index'])->name('products.index');
+            Route::post('/', [ProductController::class, 'store'])->name('products.store');
+            Route::get('/create', [ProductController::class, 'create'])->name('products.create');
+            Route::patch('/{product}', [ProductController::class, 'update'])->name('products.update');
+            Route::get('{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+            Route::delete('/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
         });
     });
 });

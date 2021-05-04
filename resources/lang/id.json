@@ -729,5 +729,21 @@
     "Category Name": "Nama Kategori",
     "category name": "nama kategori",
     "Category :category added": "Kategori :category berhasil ditambahkan",
-    "Category deleted successfully": "Kategori berhasil dihapus"
+    "Category deleted successfully": "Kategori berhasil dihapus",
+    "Product Name": "Nama Produk",
+    "Price": "Harga",
+    "Weight": "Berat",
+    "Quantity": "Stok",
+    "Image": "Gambar",
+    "Add Product": "Tambah Produk",
+    "Description": "Deskripsi",
+    "We couldn't find any data": "Tidak ada data",
+    "Please make a category first at :link": "Buat kategori terlebih dahulu di :link",
+    "Product deleted successfully": "Produk berhasil dihapus",
+    "Product doesn't exist": "Data produk tidak ditemukan",
+    "Product :name added successfully": "Produk :name berhasil ditambahkan",
+    "Product can't be added": "Produk tidak dapat ditambahkan",
+    "New Image": "Gambar Baru",
+    ":name product data has been updated": "Data produk :name telah diperbaharui",
+    "Product data can't be updated": "Data produk tidak dapat diperbaharui"
 }

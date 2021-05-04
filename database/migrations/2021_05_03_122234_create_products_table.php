@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('weight');
             $table->integer('quantity');
-            $table->foreignId('category_id')->references('id')->on('categories');
+            $table->foreignId('category_id')->nullable()->references('id')->on('categories')->onDelete('set null');
             $table->timestamps();
         });
     }
