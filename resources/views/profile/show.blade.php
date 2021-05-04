@@ -1,35 +1,65 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+@section('title', __('Profile'))
+@extends('layouts.app')
+@section('content')
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+        <h1>{{Auth::user()->name}}</h1>
+        {{-- <div class="section-header-breadcrumb">
+            <a class="btn btn-primary" href="{{route('products.create')}}" role="button"><i class="fas fa-plus"></i> {{__('Add')}}</a>
+        </div> --}}
+        </div>
 
-    <div>
-        @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-            @livewire('profile.update-profile-information-form')
+        <div class="section-body">
+        <div class="card">
+            <div class="card-header">
+            <h4>{{__('Profile')}}</h4>
+            </div>
+            <div class="card-body">
+                <x-slot name="header">
+                    <h2 class="h4 font-weight-bold">
+                        {{ __('Profile') }}
+                    </h2>
+                </x-slot>
 
-            <x-jet-section-border />
-        @endif
+                <div>
+                    @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                        @livewire('profile.update-profile-information-form')
 
-        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-            @livewire('profile.update-password-form')
+                        <x-jet-section-border />
+                    @endif
 
-            <x-jet-section-border />
-        @endif
+                    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                        @livewire('profile.update-password-form')
 
-        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-            @livewire('profile.two-factor-authentication-form')
+                        <x-jet-section-border />
+                    @endif
 
-            <x-jet-section-border />
-        @endif
+                    @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+                        @livewire('profile.two-factor-authentication-form')
 
-        @livewire('profile.logout-other-browser-sessions-form')
+                        <x-jet-section-border />
+                    @endif
 
-        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
-            <x-jet-section-border />
+                    @livewire('profile.logout-other-browser-sessions-form')
 
-            @livewire('profile.delete-user-form')
-        @endif
-    </div>
-</x-app-layout>
+                    @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+                        <x-jet-section-border />
+
+                        @livewire('profile.delete-user-form')
+                    @endif
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</div>
+@endsection
+@section('js')
+    <script src="{{asset('js/page/bootstrap-modal.js')}}"></script>
+    <script>
+        $('.modal').on('shown.bs.modal', function() {
+            $('.modal').appendTo("body")
+        });
+    </script>
+@endsection

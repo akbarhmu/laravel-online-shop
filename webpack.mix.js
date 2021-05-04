@@ -13,6 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/page/index.js', 'public/js/page/index.js')
+    .js('resources/js/page/bootstrap-modal.js', 'public/js/page/bootstrap-modal.js')
     .copy('node_modules/chart.js/dist/Chart.js', 'public/modules/chart.js')
     .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/modules/sweetalert.js')
     .sass('resources/sass/app.scss', 'public/css')
