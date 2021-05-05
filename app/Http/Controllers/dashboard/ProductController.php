@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
@@ -110,14 +111,19 @@ class ProductController extends Controller
         $product = Product::where('id', $product->id)->first();
 
         if($product != null){
-            $imagePath = 'storage/'.$product->image;
+            try{
+                $imagePath = 'storage/'.$product->image;
 
-            if(File::exists($imagePath)){
-                File::delete($imagePath);
+                $product->delete();
+
+                if(File::exists($imagePath)){
+                    File::delete($imagePath);
+                }
+
+                return back()->with('status', __('Product deleted successfully'));
+            }catch(Exception $e){
+                return back()->with('error', "Product can't be deleted");
             }
-
-            $product->delete();
-            return back()->with('status', __('Product deleted successfully'));
         }
 
         return back()->with('error', __("Product doesn't exist"));
