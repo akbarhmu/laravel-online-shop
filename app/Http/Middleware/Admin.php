@@ -21,6 +21,6 @@ class Admin
             return $next($request);
         }
 
-        abort(403);
+        return redirect()->route('index');
     }
 }
