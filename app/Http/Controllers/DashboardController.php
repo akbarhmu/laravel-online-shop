@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function index()
     {
         $customersCount = User::where('isAdmin', false)->count();
-        return view('dashboard.index', ['customersCount'=>$customersCount]);
+        return view('admin.index', ['customersCount'=>$customersCount]);
     }
 
     /**

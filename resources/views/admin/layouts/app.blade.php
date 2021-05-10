@@ -19,8 +19,8 @@
     <body>
         <div id="app">
             <div class="main-wrapper main-wrapper-1">
-                @include('layouts.partials.header')
-                @include('layouts.partials.sidebar')
+                @include('admin.layouts.partials.header')
+                @include('admin.layouts.partials.sidebar')
 
                 <!-- Main Content -->
                 @yield('content')

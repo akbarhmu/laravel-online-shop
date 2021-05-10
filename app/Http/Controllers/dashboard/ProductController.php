@@ -16,13 +16,13 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::select('products.*', 'categories.name as category_name')->join('categories', 'products.category_id', '=', 'categories.id')->orderBy('products.name', 'ASC')->paginate(10);
-        return view('dashboard.product.index', ['products'=>$products]);
+        return view('admin.product.index', ['products'=>$products]);
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('dashboard.product.create', ['categories'=>$categories]);
+        return view('admin.product.create', ['categories'=>$categories]);
     }
 
     public function store(ProductRequest $request)
@@ -58,7 +58,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
-        return view('dashboard.product.edit', ['product'=>$product, 'categories'=>$categories]);
+        return view('admin.product.edit', ['product'=>$product, 'categories'=>$categories]);
     }
 
     public function update(Request $request, $id)

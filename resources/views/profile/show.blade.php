@@ -1,5 +1,5 @@
 @section('title', __('Profile'))
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('content')
 <div class="main-content">
     <section class="section">
