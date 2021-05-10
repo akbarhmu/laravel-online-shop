@@ -30,8 +30,10 @@ class ProductController extends Controller
         $validatedData = $request->validated();
 
         $imagePath = $validatedData['image']->store('products', 'public');
-        $image = Image::make('storage/'.$imagePath)->resize(375,375);
-        $image->save('storage/'.$imagePath, 90);
+        if(extension_loaded("gd")||extension_loaded("gd2")){
+            $image = Image::make('storage/'.$imagePath)->resize(375,375);
+            $image->save('storage/'.$imagePath, 90);
+        }
 
         $product = new Product();
         $product-> name = $validatedData['name'];
@@ -91,8 +93,10 @@ class ProductController extends Controller
                 }
 
                 $newImagePath = $validatedData['image']->store('products', 'public');
-                $newImage = Image::make('storage/'.$newImagePath)->resize(375,375);
-                $newImage->save('storage/'.$newImagePath, 90);
+                if(extension_loaded("gd")||extension_loaded("gd2")){
+                    $newImage = Image::make('storage/'.$newImagePath)->resize(375,375);
+                    $newImage->save('storage/'.$newImagePath, 90);
+                }
                 $product->image = $newImagePath;
             }
 
