@@ -14,12 +14,12 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         $categories = Category::withCount('products')->orderBy('name', 'ASC')->paginate(10);
-        return view('dashboard.category.index', ['categories'=>$categories]);
+        return view('admin.category.index', ['categories'=>$categories]);
     }
 
     public function create()
     {
-        return view('dashboard.category.create');
+        return view('admin.category.create');
     }
 
     public function store(CategoryRequest $request)
@@ -39,7 +39,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        return view('dashboard.category.edit', ['category'=>$category]);
+        return view('admin.category.edit', ['category'=>$category]);
     }
 
     public function update(Request $request, Category $category)

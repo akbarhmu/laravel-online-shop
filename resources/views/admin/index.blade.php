@@ -1,5 +1,5 @@
 @section('title', __('Dashboard'))
-@extends('layouts.app')
+@extends('admin.layouts.app')
 @section('content')
 <div class="main-content">
     <section class="section">
@@ -172,6 +172,6 @@
 </div>
 @endsection
 @section('js')
-<script src="{{asset('modules/chart.js')}}"></script>
-<script src="{{asset('js/page/index.js')}}"></script>
+<script src="{{asset('js/admin/modules/chart.js')}}"></script>
+<script src="{{asset('js/admin/page/index.js')}}"></script>
 @endsection

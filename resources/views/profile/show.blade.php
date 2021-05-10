@@ -1,5 +1,5 @@
 @section('title', __('Profile'))
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('content')
 <div class="main-content">
     <section class="section">
@@ -56,7 +56,7 @@
 </div>
 @endsection
 @section('js')
-    <script src="{{asset('js/page/bootstrap-modal.js')}}"></script>
+    <script src="{{asset('js/admin/page/bootstrap-modal.js')}}"></script>
     <script>
         $('.modal').on('shown.bs.modal', function() {
             $('.modal').appendTo("body")

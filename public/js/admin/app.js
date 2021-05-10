@@ -6285,10 +6285,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/***/ "./resources/js/admin/app.js":
+/*!***********************************!*\
+  !*** ./resources/js/admin/app.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
@@ -6297,7 +6297,7 @@ __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.j
 
 __webpack_require__(/*! tooltip-js */ "./node_modules/tooltip-js/dist/tooltip.js");
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/admin/bootstrap.js");
 
 __webpack_require__(/*! jquery.nicescroll */ "./node_modules/jquery.nicescroll/jquery.nicescroll.js");
 
@@ -6307,7 +6307,7 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 
-__webpack_require__(/*! ./stisla */ "./resources/js/stisla.js");
+__webpack_require__(/*! ./stisla */ "./resources/js/admin/stisla.js");
 
 __webpack_require__(/*! jquery-sparkline */ "./node_modules/jquery-sparkline/jquery.sparkline.js");
 
@@ -6317,16 +6317,16 @@ __webpack_require__(/*! bs4-summernote */ "./node_modules/bs4-summernote/dist/su
 
 __webpack_require__(/*! chocolat */ "./node_modules/chocolat/dist/js/chocolat.esm.js");
 
-__webpack_require__(/*! ./scripts */ "./resources/js/scripts.js");
+__webpack_require__(/*! ./scripts */ "./resources/js/admin/scripts.js");
 
-__webpack_require__(/*! ./custom */ "./resources/js/custom.js");
+__webpack_require__(/*! ./custom */ "./resources/js/admin/custom.js");
 
 /***/ }),
 
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
+/***/ "./resources/js/admin/bootstrap.js":
+/*!*****************************************!*\
+  !*** ./resources/js/admin/bootstrap.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
@@ -6367,10 +6367,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/custom.js":
-/*!********************************!*\
-  !*** ./resources/js/custom.js ***!
-  \********************************/
+/***/ "./resources/js/admin/custom.js":
+/*!**************************************!*\
+  !*** ./resources/js/admin/custom.js ***!
+  \**************************************/
 /***/ (() => {
 
 "use strict";
@@ -6384,10 +6384,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/scripts.js":
-/*!*********************************!*\
-  !*** ./resources/js/scripts.js ***!
-  \*********************************/
+/***/ "./resources/js/admin/scripts.js":
+/*!***************************************!*\
+  !*** ./resources/js/admin/scripts.js ***!
+  \***************************************/
 /***/ (() => {
 
 "use strict";
@@ -6958,10 +6958,10 @@ $(function () {
 
 /***/ }),
 
-/***/ "./resources/js/stisla.js":
-/*!********************************!*\
-  !*** ./resources/js/stisla.js ***!
-  \********************************/
+/***/ "./resources/js/admin/stisla.js":
+/*!**************************************!*\
+  !*** ./resources/js/admin/stisla.js ***!
+  \**************************************/
 /***/ (function() {
 
 "use strict";
@@ -64329,10 +64329,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
+/***/ "./resources/sass/admin/app.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/admin/app.scss ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -112317,8 +112317,8 @@ process.umask = function() { return 0; };
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"/js/admin/app": 0,
+/******/ 			"css/admin/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -112366,8 +112366,8 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin/app"], () => (__webpack_require__("./resources/js/admin/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

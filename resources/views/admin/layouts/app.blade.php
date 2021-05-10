@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/admin/app.css') }}">
 
         @livewireStyles
         @yield('css')
@@ -19,8 +19,8 @@
     <body>
         <div id="app">
             <div class="main-wrapper main-wrapper-1">
-                @include('layouts.partials.header')
-                @include('layouts.partials.sidebar')
+                @include('admin.layouts.partials.header')
+                @include('admin.layouts.partials.sidebar')
 
                 <!-- Main Content -->
                 @yield('content')
@@ -42,7 +42,7 @@
         @stack('scripts')
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ mix('js/admin/app.js') }}"></script>
 
         @stack('scripts-after')
 

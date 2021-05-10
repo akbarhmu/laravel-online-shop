@@ -1,8 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/page/index.js": "/js/page/index.js",
-    "/js/page/bootstrap-modal.js": "/js/page/bootstrap-modal.js",
-    "/css/app.css": "/css/app.css",
-    "/modules/chart.js": "/modules/chart.js",
-    "/modules/sweetalert.js": "/modules/sweetalert.js"
+    "/js/admin/app.js": "/js/admin/app.js",
+    "/js/admin/page/index.js": "/js/admin/page/index.js",
+    "/js/admin/page/bootstrap-modal.js": "/js/admin/page/bootstrap-modal.js",
+    "/css/admin/app.css": "/css/admin/app.css",
+    "/js/admin/modules/chart.js": "/js/admin/modules/chart.js",
+    "/js/admin/modules/sweetalert.js": "/js/admin/modules/sweetalert.js"
 }

@@ -1,9 +1,9 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 var __webpack_exports__ = {};
-/*!************************************!*\
-  !*** ./resources/js/page/index.js ***!
-  \************************************/
+/*!******************************************!*\
+  !*** ./resources/js/admin/page/index.js ***!
+  \******************************************/
  // var ctx = document.getElementById("myChart").getContext('2d');
 // var myChart = new Chart(ctx, {
 //   type: 'line',
