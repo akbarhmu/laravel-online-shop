@@ -172,6 +172,6 @@
 </div>
 @endsection
 @section('js')
-<script src="{{asset('modules/chart.js')}}"></script>
-<script src="{{asset('js/page/index.js')}}"></script>
+<script src="{{asset('js/admin/modules/chart.js')}}"></script>
+<script src="{{asset('js/admin/page/index.js')}}"></script>
 @endsection

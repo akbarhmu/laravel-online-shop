@@ -56,7 +56,7 @@
 </div>
 @endsection
 @section('js')
-    <script src="{{asset('js/page/bootstrap-modal.js')}}"></script>
+    <script src="{{asset('js/admin/page/bootstrap-modal.js')}}"></script>
     <script>
         $('.modal').on('shown.bs.modal', function() {
             $('.modal').appendTo("body")
