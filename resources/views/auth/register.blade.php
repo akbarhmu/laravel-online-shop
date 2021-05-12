@@ -122,28 +122,38 @@
     var toHtml = (tag, value) => {
 	    $(tag).html(value);
 	}
-    $(document).ready(function() {
-        $('#province_id').on('change',function(){
-            var id = $('#province_id').val();
-            var url = window.location.href;
-            var urlNya = url.substring(0, url.lastIndexOf('/register'));
-            $.ajax({
-                type:'GET',
-                url:urlNya + '/api/city/by-province/' + id,
-                dataType:'json',
-                success:function(data){
-                    var op = '';
-                    if(data.length > 0) {
-                        var i = 0;
-                        for(i = 0; i < data.length; i++) {
-                            op += `<option value="${data[i].id}">${data[i].city_name}</option>`
-                        }
+
+    $('#province_id').on('change',function(){
+        var id = $('#province_id').val();
+        var url = window.location.href;
+        var urlNya = url.substring(0, url.lastIndexOf('/register'));
+        $.ajax({
+            type:'GET',
+            url:urlNya + '/api/city/by-province/' + id,
+            dataType:'json',
+            success:function(data){
+                var op = '';
+                if(data.length > 0) {
+                    var i = 0;
+                    for(i = 0; i < data.length; i++) {
+                        op += `<option value="${data[i].id}">${data[i].city_name}</option>`
                     }
-                    toHtml('[name="city_id"]', op);
                 }
-            })
+                toHtml('[name="city_id"]', op);
+            }
         })
-        $('#province_id').trigger('change');
-    });
+    })
+    $('#province_id').trigger('change');
+
+    @if (old('province_id')!=null)
+        $(document).ready(function() {
+            $('#province_id').val({{old('province_id')}});
+            $('#province_id').trigger('change');
+
+            setTimeout(function() {
+                $('#city_id').val({{old('city_id')}});
+            }, 1500);
+        });
+    @endif
 </script>
 @endsection

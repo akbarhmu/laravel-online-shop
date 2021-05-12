@@ -11,12 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .js('resources/js/page/index.js', 'public/js/page/index.js')
-    .js('resources/js/page/bootstrap-modal.js', 'public/js/page/bootstrap-modal.js')
-    .copy('node_modules/chart.js/dist/Chart.js', 'public/modules/chart.js')
-    .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/modules/sweetalert.js')
-    .sass('resources/sass/app.scss', 'public/css')
+mix.js('resources/js/admin/app.js', 'public/js/admin')
+    .js('resources/js/user/app.js', 'public/js/user')
+    .js('resources/js/admin/page/index.js', 'public/js/admin/page/index.js')
+    .js('resources/js/admin/page/bootstrap-modal.js', 'public/js/admin/page/bootstrap-modal.js')
+    .copy('node_modules/chart.js/dist/Chart.js', 'public/js/admin/modules/chart.js')
+    .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/admin/modules/sweetalert.js')
+    .sass('resources/sass/admin/app.scss', 'public/css/admin')
     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {

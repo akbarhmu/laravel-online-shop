@@ -29,6 +29,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
         'email',
         'password',
         'address',
+        'province_id',
         'city_id',
         'subdistrict',
         'postal_code',
@@ -64,4 +65,14 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function cities()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function provinces()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
 }

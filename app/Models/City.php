@@ -14,4 +14,9 @@ class City extends Model
         'city_name',
         'postal_code',
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

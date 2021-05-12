@@ -12,4 +12,9 @@ class Province extends Model
     protected $fillable = [
         'province',
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

@@ -16,13 +16,13 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::select('products.*', 'categories.name as category_name')->join('categories', 'products.category_id', '=', 'categories.id')->orderBy('products.name', 'ASC')->paginate(10);
-        return view('dashboard.product.index', ['products'=>$products]);
+        return view('admin.product.index', ['products'=>$products]);
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('dashboard.product.create', ['categories'=>$categories]);
+        return view('admin.product.create', ['categories'=>$categories]);
     }
 
     public function store(ProductRequest $request)
@@ -30,8 +30,10 @@ class ProductController extends Controller
         $validatedData = $request->validated();
 
         $imagePath = $validatedData['image']->store('products', 'public');
-        $image = Image::make('storage/'.$imagePath)->resize(375,375);
-        $image->save('storage/'.$imagePath, 90);
+        if(extension_loaded("gd")||extension_loaded("gd2")){
+            $image = Image::make('storage/'.$imagePath)->resize(375,375);
+            $image->save('storage/'.$imagePath, 90);
+        }
 
         $product = new Product();
         $product-> name = $validatedData['name'];
@@ -58,7 +60,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::all();
-        return view('dashboard.product.edit', ['product'=>$product, 'categories'=>$categories]);
+        return view('admin.product.edit', ['product'=>$product, 'categories'=>$categories]);
     }
 
     public function update(Request $request, $id)
@@ -91,8 +93,10 @@ class ProductController extends Controller
                 }
 
                 $newImagePath = $validatedData['image']->store('products', 'public');
-                $newImage = Image::make('storage/'.$newImagePath)->resize(375,375);
-                $newImage->save('storage/'.$newImagePath, 90);
+                if(extension_loaded("gd")||extension_loaded("gd2")){
+                    $newImage = Image::make('storage/'.$newImagePath)->resize(375,375);
+                    $newImage->save('storage/'.$newImagePath, 90);
+                }
                 $product->image = $newImagePath;
             }
 

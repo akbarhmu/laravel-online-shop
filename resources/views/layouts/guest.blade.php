@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
     </head>
     <body>
         <div id="app">
@@ -19,7 +19,7 @@
                 @yield('content')
             </section>
         </div>
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ mix('js/admin/app.js') }}"></script>
         @yield('js')
     </body>
 </html>

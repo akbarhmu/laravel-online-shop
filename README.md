@@ -4,7 +4,9 @@
 ElectroParadizo: Simple Online Store Website Built With Laravel
 </p>
 
-Simple online store website built with laravel and jetstrap (livewire). The purpose of this projects is for educational only. Beside Laravel, this project uses other tools like:
+Simple online store website built with laravel and jetstrap (livewire). The purpose of this projects is for educational only, this was my first production app in my life, so it contains a lot of inefficient algorithms such as repeating the code.
+
+Beside Laravel, this project uses other tools like:
 - [Jetstrap (Jetstream+Bootstrap)](https://github.com/nascent-africa/jetstrap)
 - [Bootstrap 4](https://getbootstrap.com/)
 - [Font Awesome](http://fontawesome.io/)

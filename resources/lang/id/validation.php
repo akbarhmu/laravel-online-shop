@@ -147,5 +147,6 @@ return [
     */
 
     'attributes' => [
+        'quantity.*' => __('Jumlah')
     ],
 ];
