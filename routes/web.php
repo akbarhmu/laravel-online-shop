@@ -30,14 +30,14 @@ Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.pr
 Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
 Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
 
-Route::get('/user/address', [AddressController::class, 'index'])->name('profile.address');
-Route::patch('/user/address', [AddressController::class, 'update'])->name('address.update');
-
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('carts.index');
     Route::post('/cart', [CartController::class, 'store'])->name('carts.store');
     Route::patch('/cart', [CartController::class, 'update'])->name('carts.update');
     Route::get('/cart/{cart}', [CartController::class, 'destroy'])->name('carts.destroy');
+
+    Route::get('/user/address', [AddressController::class, 'index'])->name('profile.address');
+    Route::patch('/user/address', [AddressController::class, 'update'])->name('address.update');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
