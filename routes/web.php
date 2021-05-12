@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\dashboard\ShopController;
 use App\Http\Controllers\user\AddressController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\PageController;
@@ -59,6 +60,11 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
             Route::patch('/{product}', [ProductController::class, 'update'])->name('products.update');
             Route::get('{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
             Route::delete('/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+        });
+
+        Route::prefix('shop')->group(function(){
+            Route::get('/', [ShopController::class, 'index'])->name('shops.index');
+            Route::post('/', [ShopController::class, 'update'])->name('shops.update');
         });
     });
 });
