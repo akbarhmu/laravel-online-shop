@@ -23,7 +23,7 @@ use Illuminate\Support\Str;
 */
 
 Route::get('/', function () {
-    return view('landing/index');
+    return view('welcome');
 })->name('index');
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
