@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\user\AddressController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\PageController;
 use Illuminate\Auth\Events\PasswordReset;
@@ -34,6 +35,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('/cart', [CartController::class, 'store'])->name('carts.store');
     Route::patch('/cart', [CartController::class, 'update'])->name('carts.update');
     Route::get('/cart/{cart}', [CartController::class, 'destroy'])->name('carts.destroy');
+
+    Route::get('/user/address', [AddressController::class, 'index'])->name('profile.address');
+    Route::patch('/user/address', [AddressController::class, 'update'])->name('address.update');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
