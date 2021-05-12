@@ -38,15 +38,4 @@ class PageController extends Controller
         $product = Product::find($product->id);
         return view('user.product.show', ['product'=>$product]);
     }
-
-    public function address(){
-        $user = User::where('users.id', Auth::user()->id)
-                    ->join('provinces', 'provinces.id', '=', 'users.province_id')
-                    ->join('cities', 'cities.id', '=', 'users.city_id')
-                    ->select('users.*', 'cities.city_name', 'provinces.province as province_name')
-                    ->first();
-        $provinces = Province::all();
-        $address = $user->address.", Kecamatan ".$user->subdistrict.", ".$user->city_name.", ".$user->province_name.", ".$user->postal_code;
-        return view('profile.address', ['address'=>$address, 'provinces'=>$provinces]);
-    }
 }
