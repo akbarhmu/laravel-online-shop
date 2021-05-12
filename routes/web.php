@@ -26,6 +26,7 @@ use Illuminate\Support\Str;
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
 Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
+Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
     Route::prefix('dashboard')->group(function () {
