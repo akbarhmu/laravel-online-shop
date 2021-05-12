@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\user\AddressController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\PageController;
 use Illuminate\Auth\Events\PasswordReset;
@@ -28,6 +29,8 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
 Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
 Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
+
+Route::get('/user/address', [AddressController::class, 'index'])->name('profile.address');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('carts.index');
