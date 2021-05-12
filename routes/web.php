@@ -31,6 +31,7 @@ Route::get('/category/{category}', [PageController::class, 'showProductCategory'
 Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
 
 Route::get('/user/address', [AddressController::class, 'index'])->name('profile.address');
+Route::patch('/user/address', [AddressController::class, 'update'])->name('address.update');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('carts.index');
