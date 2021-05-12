@@ -1,5 +1,6 @@
 {
     "/js/admin/app.js": "/js/admin/app.js",
+    "/js/user/app.js": "/js/user/app.js",
     "/js/admin/page/index.js": "/js/admin/page/index.js",
     "/js/admin/page/bootstrap-modal.js": "/js/admin/page/bootstrap-modal.js",
     "/css/admin/app.css": "/css/admin/app.css",

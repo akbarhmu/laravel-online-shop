@@ -3,6 +3,8 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\user\CartController;
+use App\Http\Controllers\user\PageController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -22,9 +24,17 @@ use Illuminate\Support\Str;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
+Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
+Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('carts.index');
+    Route::post('/cart', [CartController::class, 'store'])->name('carts.store');
+    Route::patch('/cart', [CartController::class, 'update'])->name('carts.update');
+    Route::get('/cart/{cart}', [CartController::class, 'destroy'])->name('carts.destroy');
+});
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
     Route::prefix('dashboard')->group(function () {
@@ -33,7 +43,6 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
             Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
             Route::post('/', [CategoryController::class, 'store'])->name('categories.store');
             Route::get('/create', [CategoryController::class, 'create'])->name('categories.create');
-            Route::get('/{category}', [CategoryController::class, 'show'])->name('categories.show');
             Route::patch('/{category}', [CategoryController::class, 'update'])->name('categories.update');
             Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
             Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
