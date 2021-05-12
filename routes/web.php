@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\user\PageController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -22,9 +23,9 @@ use Illuminate\Support\Str;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
+Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
     Route::prefix('dashboard')->group(function () {
