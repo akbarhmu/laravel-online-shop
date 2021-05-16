@@ -19,7 +19,7 @@
             <li><a class="nav-link" href="blank.html"><i class="fas fa-tools"></i> <span>{{__('Services')}}</span></a></li>
 
             <li class="menu-header">{{__('Settings')}}</li>
-            <li><a class="nav-link" href="blank.html"><i class="fas fa-store"></i> <span>{{__('Shop')}}</span></a></li>
+            <li><a class="nav-link" href="{{route('shops.index')}}"><i class="fas fa-store"></i> <span>{{__('Shop')}}</span></a></li>
         </ul>
     </aside>
 </div>
