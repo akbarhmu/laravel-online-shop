@@ -20,7 +20,7 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="secondNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">ELECTROPARADIZO</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -35,7 +35,7 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        {{-- <header class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end">
@@ -50,9 +50,9 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </header> --}}
         <!-- About-->
-        <section class="page-section bg-primary" id="about">
+        {{-- <section class="page-section bg-primary" id="about">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
@@ -163,12 +163,13 @@
             </div>
         </div>
         <!-- Call to action-->
-        {{-- <section class="page-section bg-dark text-white">
+        <section class="page-section bg-dark text-white">
             <div class="container text-center">
                 <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
                 <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
             </div>
-        </section> --}}
+        </section>
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container">
@@ -213,6 +214,90 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{{ asset('js/scripts_landing.js') }}"></script>
+        <script>
+            (function ($) {
+                "use strict"; // Start of use strict
+
+                // Smooth scrolling using anime.js
+                $('a.js-scroll-trigger[href*="#"]:not([href="#"])').on('click', function () {
+                    if (
+                        location.pathname.replace(/^\//, "") ==
+                        this.pathname.replace(/^\//, "") &&
+                        location.hostname == this.hostname
+                    ) {
+                        var target = $(this.hash);
+                        target = target.length ?
+                            target :
+                            $("[name=" + this.hash.slice(1) + "]");
+                        if (target.length) {
+                            anime({
+                                targets: 'html, body',
+                                scrollTop: target.offset().top - 72,
+                                duration: 1000,
+                                easing: 'easeInOutExpo'
+                            });
+                            return false;
+                        }
+                    }
+                });
+
+                // Closes responsive menu when a scroll trigger link is clicked
+                $('.js-scroll-trigger').click(function () {
+                    $('.navbar-collapse').collapse('hide');
+                });
+
+                // Activate scrollspy to add active class to navbar items on scroll
+                $('body').scrollspy({
+                    target: '#secondNav',
+                    offset: 75
+                });
+
+                // Collapse Navbar
+                var navbarCollapse = function () {
+                    if ($("#secondNav").offset().top > 100) {
+                        $("#secondNav").addClass("navbar-scrolled");
+                    }
+                    else {
+                        $("#secondNav").removeClass("navbar-scrolled");
+                    }
+                };
+
+                // var navbarSecondCollapse = function () {
+                //     if ($("#secondNav").offset().top > 100) {
+                //         $("#secondNav").addClass("navbar-scrolled");
+                //     }
+                //     else {
+                //         $("#secondNav").removeClass("navbar-scrolled");
+                //     }
+                // };
+
+                // Collapse now if page is not at top
+                // navbarCollapse();
+                navbarCollapse();
+                // navbarSecondCollapse();
+
+                // Collapse the navbar when page is scrolled
+                $(window).scroll(navbarCollapse);
+                // $(window).scroll(navbarSecondCollapse);
+
+
+                // Magnific popup calls
+                $('#portfolio').magnificPopup({
+                    delegate: 'a',
+                    type: 'image',
+                    tLoading: 'Loading image #%curr%...',
+                    mainClass: 'mfp-img-mobile',
+                    gallery: {
+                        enabled: true,
+                        navigateByImgClick: true,
+                        preload: [0, 1]
+                    },
+                    image: {
+                        tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+                    }
+                });
+
+            })(jQuery); // End of use strict
+        </script>
     </body>
 </html>

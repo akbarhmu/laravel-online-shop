@@ -44,14 +44,30 @@
     var navbarCollapse = function () {
         if ($("#mainNav").offset().top > 100) {
             $("#mainNav").addClass("navbar-scrolled");
-        } else {
+        }
+        else {
             $("#mainNav").removeClass("navbar-scrolled");
         }
     };
+
+    // var navbarSecondCollapse = function () {
+    //     if ($("#secondNav").offset().top > 100) {
+    //         $("#secondNav").addClass("navbar-scrolled");
+    //     }
+    //     else {
+    //         $("#secondNav").removeClass("navbar-scrolled");
+    //     }
+    // };
+
     // Collapse now if page is not at top
+    // navbarCollapse();
     navbarCollapse();
+    // navbarSecondCollapse();
+
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
+    // $(window).scroll(navbarSecondCollapse);
+
 
     // Magnific popup calls
     $('#portfolio').magnificPopup({

@@ -7271,6 +7271,7 @@ hr.light {
     padding: 8rem 0;
 }
 
+/* mainNavbar */
 #mainNav {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     background-color: #fff;
@@ -7333,13 +7334,78 @@ hr.light {
     }
 }
 
+/* secondNavbar */
+#secondNav {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: purple;
+    transition: background-color 0.2s ease;
+}
+#secondNav .navbar-brand {
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    color: #ffffff;
+}
+#secondNav .navbar-nav .nav-item .nav-link {
+    color: #6c757d;
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+}
+#secondNav .navbar-nav .nav-item .nav-link:hover, #secondNav .navbar-nav .nav-item .nav-link:active {
+    /* color: #593196; */
+    color: white;
+}
+#secondNav .navbar-nav .nav-item .nav-link.active {
+    /* color: #593196 !important; */
+    color : white;
+}
+@media (min-width: 992px) {
+    #secondNav {
+    box-shadow: none;
+    background-color: purple;
+    }
+    #secondNav .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+    }
+    #secondNav .navbar-brand:hover {
+    color: #fff;
+    }
+    #secondNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 1rem;
+    }
+    #secondNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+    }
+    #secondNav .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 0;
+    }
+    #secondNav.navbar-scrolled {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    }
+    #secondNav.navbar-scrolled .navbar-brand {
+    color: #212529;
+    }
+    #secondNav.navbar-scrolled .navbar-brand:hover {
+    color: #593196;
+    }
+    #secondNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+    color: #212529;
+    }
+    #secondNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+    color: #593196;
+    }
+}
+
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem);
     background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../img/bg-masthead.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: cover;
 }
 header.masthead h1 {
