@@ -11,6 +11,7 @@ class Shop extends Model
 
     protected $fillable = [
         'name',
+        'phone',
         'address',
         'province_id',
         'city_id',
@@ -18,4 +19,14 @@ class Shop extends Model
         'postal_code',
         'logo',
     ];
+
+    public function cities()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function provinces()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
 }
