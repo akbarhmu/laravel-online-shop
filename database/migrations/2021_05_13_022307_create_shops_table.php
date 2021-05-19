@@ -23,7 +23,6 @@ class CreateShopsTable extends Migration
             $table->foreign('city_id')->references('id')->on('cities');
             $table->string('subdistrict');
             $table->string('postal_code');
-            $table->string('logo');
             $table->timestamps();
         });
     }
