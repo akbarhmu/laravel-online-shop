@@ -64,7 +64,7 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
 
         Route::prefix('shop')->group(function(){
             Route::get('/', [ShopController::class, 'index'])->name('shops.index');
-            Route::post('/', [ShopController::class, 'update'])->name('shops.update');
+            Route::patch('/', [ShopController::class, 'update'])->name('shops.update');
         });
     });
 });
