@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{route('dashboard')}}">{{ config('app.name', 'Laravel') }}</a>
+            <a href="{{route('dashboard')}}">{{ $site_title }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{route('dashboard')}}">EP</a>
+            <a href="{{route('dashboard')}}"><img src="{{asset('images/logo/logo.png')}}" alt="" srcset="" style="width: 25px; height: 25px;"></a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">{{__('Dashboard')}}</li>
@@ -19,7 +19,7 @@
             <li><a class="nav-link" href="blank.html"><i class="fas fa-tools"></i> <span>{{__('Services')}}</span></a></li>
 
             <li class="menu-header">{{__('Settings')}}</li>
-            <li><a class="nav-link" href="blank.html"><i class="fas fa-store"></i> <span>{{__('Shop')}}</span></a></li>
+            <li class="{{Custom::set_active(['dashboard/shop*'])}}"><a class="nav-link" href="{{route('shops.index')}}"><i class="fas fa-store"></i> <span>{{__('Shop')}}</span></a></li>
         </ul>
     </aside>
 </div>

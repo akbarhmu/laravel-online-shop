@@ -1,1 +1,1 @@
-Copyright &copy; 2021 {{ config('app.name', 'Laravel') }}
+Copyright &copy; 2021 {{ $site_title }}
