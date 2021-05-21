@@ -85,7 +85,7 @@
       </div>
 @endsection
 @section('js')
-<script src="{{asset('modules/sweetalert.js')}}"></script>
+<script src="{{asset('js/admin/modules/sweetalert.js')}}"></script>
 <script>
     $('.delete-confirm').click(function(event) {
         var form =  $(this).closest("form");
