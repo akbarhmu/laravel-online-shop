@@ -7,6 +7,7 @@ use App\Http\Controllers\dashboard\ProductController;
 use App\Http\Controllers\dashboard\ShopController;
 use App\Http\Controllers\user\AddressController;
 use App\Http\Controllers\user\CartController;
+use App\Http\Controllers\user\CheckoutController;
 use App\Http\Controllers\user\PageController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
@@ -40,6 +41,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/user/address', [AddressController::class, 'index'])->name('profile.address');
     Route::patch('/user/address', [AddressController::class, 'update'])->name('address.update');
+
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkouts.store');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
