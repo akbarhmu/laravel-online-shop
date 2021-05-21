@@ -19,6 +19,7 @@
             <li><a class="nav-link" href="blank.html"><i class="fas fa-tools"></i> <span>{{__('Services')}}</span></a></li>
 
             <li class="menu-header">{{__('Settings')}}</li>
+            <li class="{{Custom::set_active(['dashboard/payments*'])}}"><a class="nav-link" href="{{route('payments.index')}}"><i class="fas fa-money-bill-wave"></i> <span>{{__('Payment Methods')}}</span></a></li>
             <li class="{{Custom::set_active(['dashboard/shop*'])}}"><a class="nav-link" href="{{route('shops.index')}}"><i class="fas fa-store"></i> <span>{{__('Shop')}}</span></a></li>
         </ul>
     </aside>
