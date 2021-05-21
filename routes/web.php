@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
+use App\Http\Controllers\dashboard\PaymentController;
 use App\Http\Controllers\dashboard\ProductController;
 use App\Http\Controllers\dashboard\ShopController;
 use App\Http\Controllers\user\AddressController;
@@ -66,6 +67,8 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
             Route::get('/', [ShopController::class, 'index'])->name('shops.index');
             Route::patch('/', [ShopController::class, 'update'])->name('shops.update');
         });
+
+        Route::resource('payments', PaymentController::class);
     });
 });
 
