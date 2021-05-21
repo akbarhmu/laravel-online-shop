@@ -45,6 +45,7 @@ class UserServiceProvider extends ServiceProvider
                         ->where('shops.id','=', 1)
                         ->first();
         View::share('site_title', $shop->name);
+        View::share('site_phone', $shop->phone);
         View::share('site_address', $shop->address);
         View::share('site_subdistrict', $shop->subdistrict);
         View::share('site_city_name', $shop->city_name);
