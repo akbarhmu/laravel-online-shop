@@ -4,6 +4,7 @@
     "/js/admin/page/index.js": "/js/admin/page/index.js",
     "/js/admin/page/bootstrap-modal.js": "/js/admin/page/bootstrap-modal.js",
     "/css/admin/app.css": "/css/admin/app.css",
+    "/css/user/app.css": "/css/user/app.css",
     "/js/admin/modules/chart.js": "/js/admin/modules/chart.js",
     "/js/admin/modules/sweetalert.js": "/js/admin/modules/sweetalert.js"
 }

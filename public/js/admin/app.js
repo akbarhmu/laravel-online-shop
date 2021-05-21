@@ -64342,6 +64342,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/user/app.scss":
+/*!**************************************!*\
+  !*** ./resources/sass/user/app.scss ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/moment/locale/af.js":
 /*!******************************************!*\
   !*** ./node_modules/moment/locale/af.js ***!
@@ -112318,7 +112331,8 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/admin/app": 0,
-/******/ 			"css/admin/app": 0
+/******/ 			"css/admin/app": 0,
+/******/ 			"css/user/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -112366,8 +112380,9 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/admin/app"], () => (__webpack_require__("./resources/js/admin/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin/app","css/user/app"], () => (__webpack_require__("./resources/js/admin/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/admin/app","css/user/app"], () => (__webpack_require__("./resources/sass/admin/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/admin/app","css/user/app"], () => (__webpack_require__("./resources/sass/user/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
