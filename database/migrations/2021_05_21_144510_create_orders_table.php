@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('invoice');
+            $table->string('invoice')->unique();
             $table->string('order_name');
             $table->string('order_phone');
             $table->text('order_notes');
@@ -27,8 +27,7 @@ class CreateOrdersTable extends Migration
             $table->integer('total');
             $table->enum('courier', ['jne', 'pos']);
             $table->string('tracking_number')->nullable();
-            $table->foreignId('payment_method_id')->nullable();
-            $table->foreign('payment_method_id')->references('id')->on('payment_methods');
+            $table->string('payment_method')->nullable();
             $table->string('payment_proff_image')->nullable();
             $table->char('status');
             $table->timestamps();
