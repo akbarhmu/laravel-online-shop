@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="site-cart">
+                        <a href="{{route('orders.index')}}" class="site-cart">
                             <span class="icon icon-shopping_cart"></span>
                             {{-- <span class="count">2</span> --}}
                         </a>

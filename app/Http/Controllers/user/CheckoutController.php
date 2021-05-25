@@ -81,9 +81,12 @@ class CheckoutController extends Controller
         // Total
         $total = $shipping_cost+$this->getSubTotal();
 
+        // Invoice
+        $no_invoice = $this->getInvoiceNumber();
+
         // Insert Order
         $order_id = DB::table('orders')->insertGetId([
-                        'invoice'       => $this->getInvoiceNumber(),
+                        'invoice'       => $no_invoice,
                         'order_name'    => $validatedData['order_name'],
                         'order_phone'   => $validatedData['order_phone'],
                         'order_notes'   => $validatedData['order_notes'],
@@ -121,7 +124,7 @@ class CheckoutController extends Controller
             $product->save();
         }
 
-        return redirect()->route('carts.index')->with('status', 'Order Berhasil');
+        return redirect()->route('orders.success', $no_invoice);
 
     }
 

@@ -5,9 +5,11 @@ use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\PaymentController;
 use App\Http\Controllers\dashboard\ProductController;
 use App\Http\Controllers\dashboard\ShopController;
+use App\Http\Controllers\FileAccessController;
 use App\Http\Controllers\user\AddressController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\CheckoutController;
+use App\Http\Controllers\user\OrderController;
 use App\Http\Controllers\user\PageController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
@@ -32,6 +34,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
 Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
 Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
+Route::get('/contact', [PageController::class, 'contact'])->name('contacts.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/cart', [CartController::class, 'index'])->name('carts.index');
@@ -44,6 +47,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkouts.store');
+
+    Route::resource('orders', OrderController::class);
+    Route::get('/orders/{order}/success', [OrderController::class, 'success'])->name('orders.success');
+    Route::get('/orders/{order}/payment', [OrderController::class, 'payment'])->name('orders.payment');
+    Route::patch('/orders/{order}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
+    Route::post('/orders/{order}/payment', [OrderController::class, 'paymentProcess'])->name('orders.paymentProcess');
+    Route::patch('/orders/{order}/received', [OrderController::class, 'received'])->name('orders.received');
+
+    Route::get('/file/serve/payment/{file}', [FileAccessController::class, 'serve'])->name('images.payment');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
