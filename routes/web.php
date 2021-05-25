@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\PaymentController;
 use App\Http\Controllers\dashboard\ProductController;
 use App\Http\Controllers\dashboard\ShopController;
+use App\Http\Controllers\FileAccessController;
 use App\Http\Controllers\user\AddressController;
 use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\CheckoutController;
@@ -44,6 +45,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkouts.store');
+
+    Route::get('/file/serve/payment/{file}', [FileAccessController::class, 'serve'])->name('images.payment');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
