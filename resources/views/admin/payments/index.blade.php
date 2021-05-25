@@ -1,19 +1,19 @@
-@section('title', __('Products'))
+@section('title', __('Payment Methods'))
 @extends('admin.layouts.app')
 @section('content')
     <div class="main-content">
         <section class="section">
           <div class="section-header">
-            <h1>{{__('Products')}}</h1>
+            <h1>{{__('Payment Methods')}}</h1>
             <div class="section-header-breadcrumb">
-              <a class="btn btn-primary" href="{{route('products.create')}}" role="button"><i class="fas fa-plus"></i> {{__('Add')}}</a>
+              <a class="btn btn-primary" href="{{route('payments.create')}}" role="button"><i class="fas fa-plus"></i> {{__('Add')}}</a>
             </div>
           </div>
 
           <div class="section-body">
             <div class="card">
               <div class="card-header">
-                <h4>{{__('All Product')}}</h4>
+                <h4>{{__('Payment Methods')}}</h4>
               </div>
               <div class="card-body p-2">
                 @if (session('status'))
@@ -31,35 +31,29 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
-                                <th scope="col">{{__('Product Name')}}</th>
-                                <th scope="col">{{__('Price')}}</th>
-                                <th scope="col">{{__('Weight')}}</th>
-                                <th scope="col">{{__('Category')}}</th>
-                                <th scope="col">{{__('Quantity')}}</th>
-                                <th scope="col">{{__('Image')}}</th>
+                                <th scope="col">{{__('Account')}}</th>
+                                <th scope="col">{{__('Account Name')}}</th>
+                                <th scope="col">{{__('Account Number')}}</th>
                                 <th scope="col" class="text-center">{{__('Action')}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($products as $product)
+                            @forelse ($payment_methods as $payment_method)
                                 <tr>
-                                    <th scope="row">{{$loop->iteration + $products->firstItem() -1}}</th>
-                                    <td>{{$product->name}}</td>
-                                    <td>@rupiah($product->price)</td>
-                                    <td>{{$product->weight}}g</td>
-                                    <td>{{$product->category_name}}</td>
-                                    <td>{{$product->quantity}}</td>
-                                    <td><img class="product-photo" src="{{asset('storage/'.$product->image)}}" alt="" srcset=""></td>
+                                    <th scope="row">{{$loop->iteration + $payment_methods->firstItem() -1}}</th>
+                                    <td>{{$payment_method->account}}</td>
+                                    <td>{{$payment_method->account_name}}</td>
+                                    <td>{{$payment_method->account_number}}</td>
                                     <td class="text-center">
-                                        <div style="display: inline-flex;">
+                                        <div class="form-group" style="display: inline-flex;">
                                             <div class="p-1">
-                                                <a name="edit"" class="btn btn-warning btn-sm btnAction" href="{{route('products.edit', $product->id)}}" role="button"><i class="fas fa-edit"></i></a>
+                                                <a name="edit"" class="btn btn-warning btn-sm btnAction" href="{{route('payments.edit', $payment_method->id)}}" role="button"><i class="fas fa-edit"></i></a>
                                             </div>
                                             <div class="p-1">
-                                                <form action="{{route('products.destroy', $product->id)}}" method="post">
+                                                <form action="{{route('payments.destroy', $payment_method->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button onclick="" name="delete" data-name="{{ $product->name }}" class="btn btn-danger btn-sm btnAction delete-confirm" type="submit" role="button"><i class="fas fa-trash"></i></button>
+                                                    <button onclick="" name="delete" data-name="{{ $payment_method->account }}" class="btn btn-danger btn-sm btnAction delete-confirm" type="submit" role="button"><i class="fas fa-trash"></i></button>
                                                 </form>
                                             </div>
                                         </div>
@@ -67,22 +61,20 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center">
-                                        <h6>{{__("We couldn't find any data")}}</h6>
-                                    </td>
+                                    <td colspan="4" class="text-center">{{__('Tidak ada data.')}}</td>
                                 </tr>
                             @endforelse
                         </tbody>
                     </table>
                 </div>
                 <div class="pagination float-right">
-                    {{ $products->links() }}
+                    {{ $payment_methods->links() }}
                 </div>
               </div>
             </div>
           </div>
         </section>
-      </div>
+    </div>
 @endsection
 @section('js')
 <script src="{{asset('js/admin/modules/sweetalert.js')}}"></script>
@@ -92,7 +84,7 @@
         var name = $(this).data("name").toLowerCase();
         event.preventDefault();
         swal({
-            title: `Anda yakin ingin menghapus produk ${name}?`,
+            title: `Anda yakin ingin menghapus metode pembayaran ${name}?`,
             icon: "warning",
             buttons: true,
             dangerMode: true,

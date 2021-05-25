@@ -18,6 +18,7 @@ mix.js('resources/js/admin/app.js', 'public/js/admin')
     .copy('node_modules/chart.js/dist/Chart.js', 'public/js/admin/modules/chart.js')
     .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/admin/modules/sweetalert.js')
     .sass('resources/sass/admin/app.scss', 'public/css/admin')
+    .sass('resources/sass/user/app.scss', 'public/css/user')
     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {

@@ -12,7 +12,7 @@
 
         <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
             <div class="site-logo">
-            <a href="{{route('index')}}" class="js-logo-clone">{{ $site_title }}</a>
+                <a href="{{route('index')}}" class="js-logo-clone" style="border: 2px solid #7971ea !important;">{{ $site_title }}</a>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="site-cart">
+                        <a href="{{route('orders.index')}}" class="site-cart">
                             <span class="icon icon-shopping_cart"></span>
                             {{-- <span class="count">2</span> --}}
                         </a>

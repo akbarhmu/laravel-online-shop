@@ -119,7 +119,7 @@
                 <div class="row">
                   <div class="col-md-12">
                       @if (Auth::user()->province_id != null && Auth::user()->city_id != null && Auth::user()->address != null && Auth::user()->subdistrict != null && Auth::user()->postal_code != null)
-                        <a class="btn btn-primary btn-lg py-3 btn-block" href="">{{__('Proceed To Checkout')}}</a>
+                        <a class="btn btn-primary btn-lg py-3 btn-block" href="{{route('checkout.index')}}">{{__('Proceed To Checkout')}}</a>
                       @else
                         <a class="btn btn-primary btn-lg py-3 btn-block" href="{{route('profile.address')}}">{{__('Address Settings')}}</a>
                       @endif

@@ -49,7 +49,13 @@
                     </div>
                     <x-jet-input-error for="quantity"></x-jet-input-error>
                 </div>
-                <p><button type="submit" class="buy-now btn btn-sm btn-primary">Add To Cart</button></p>
+                <p>
+                @if ($product->quantity>0)
+                    <button type="submit" class="buy-now btn btn-sm btn-primary">Add To Cart</button>
+                @else
+                    <button class="buy-now btn btn-sm btn-primary" disabled>Stok Habis</button>
+                @endif
+                </p>
             </form>
 
           </div>
