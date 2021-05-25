@@ -54,8 +54,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::patch('/orders/{order}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
     Route::post('/orders/{order}/payment', [OrderController::class, 'paymentProcess'])->name('orders.paymentProcess');
     Route::patch('/orders/{order}/received', [OrderController::class, 'received'])->name('orders.received');
-
-    Route::get('/file/serve/payment/{file}', [FileAccessController::class, 'serve'])->name('images.payment');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
@@ -86,6 +84,8 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
 
         Route::resource('payments', PaymentController::class);
     });
+
+    Route::get('/file/serve/payment/{file}', [FileAccessController::class, 'serve'])->name('images.payment');
 });
 
 Route::prefix('email')->group(function () {
