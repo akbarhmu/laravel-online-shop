@@ -17,7 +17,7 @@
                             <h4>{{__('Incomes')}}</h4>
                         </div>
                         <div class="card-body">
-                            @rupiah(0)
+                            @rupiah($incomes)
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             <h4>{{__('Orders')}}</h4>
                         </div>
                         <div class="card-body">
-                            0
+                            {{$ordersCount}}
                         </div>
                     </div>
                 </div>
