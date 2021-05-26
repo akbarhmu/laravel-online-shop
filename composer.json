@@ -17,6 +17,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
+        "scyllaly/hcaptcha": "^4.4",
         "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
