@@ -75,7 +75,7 @@
         <ul class="site-menu js-clone-nav d-none d-md-block">
         <li class="{{Custom::set_active(['/'])}}"><a href="{{route('index')}}">{{__('Home')}}</a></li>
         <li class="{{Custom::set_active(['product*', 'category*'])}}"><a href="{{route('user.products.index')}}">{{__('Products')}}</a></li>
-        <li class="{{Custom::set_active(['service'])}}"><a href="#">{{__('Service')}}</a></li>
+        <li class="{{Custom::set_active(['service*'])}}"><a href="{{route('services.index')}}">{{__('Service')}}</a></li>
         <li class="{{Custom::set_active(['contact'])}}"><a href="#">Contact</a></li>
         </ul>
     </div>
