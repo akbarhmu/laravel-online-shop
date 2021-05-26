@@ -34,6 +34,7 @@ use Illuminate\Support\Str;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/product/search', [PageController::class, 'search'])->name('user.products.search');
 Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
 Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
 Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');

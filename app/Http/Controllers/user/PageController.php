@@ -38,4 +38,13 @@ class PageController extends Controller
         $product = Product::find($product->id);
         return view('user.product.show', ['product'=>$product]);
     }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $products = Product::with('categories')->where('products.name', 'like', '%' . $keyword . '%')->orderBy('name', 'asc')->paginate(12);
+        $categories = Category::withCount('products')->get();
+        return view('user.product.search', ['products'=>$products, 'categories'=>$categories, 'keyword'=>$keyword]);
+    }
 }
