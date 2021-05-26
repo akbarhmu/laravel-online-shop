@@ -15,7 +15,7 @@
             <li class="{{Custom::set_active(['dashboard/products*'])}}"><a class="nav-link" href="{{route('products.index')}}"><i class="fas fa-box"></i> <span>{{__('Products')}}</span></a></li>
 
             <li class="menu-header">{{__('Transaction')}}</li>
-            <li><a class="nav-link" href="blank.html"><i class="fas fa-shopping-bag"></i> <span>{{__('Orders')}}</span></a></li>
+            <li class="{{Custom::set_active(['dashboard/orders*'])}}"><a class="nav-link" href="{{route('admin.orders.index')}}"><i class="fas fa-shopping-bag"></i> <span>{{__('Orders')}}</span></a></li>
             <li><a class="nav-link" href="blank.html"><i class="fas fa-tools"></i> <span>{{__('Services')}}</span></a></li>
 
             <li class="menu-header">{{__('Settings')}}</li>

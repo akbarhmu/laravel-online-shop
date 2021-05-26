@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\dashboard\CategoryController;
+use App\Http\Controllers\dashboard\OrderController as AdminOrderController;
 use App\Http\Controllers\dashboard\PaymentController;
 use App\Http\Controllers\dashboard\ProductController;
 use App\Http\Controllers\dashboard\ShopController;
@@ -54,8 +55,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::patch('/orders/{order}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
     Route::post('/orders/{order}/payment', [OrderController::class, 'paymentProcess'])->name('orders.paymentProcess');
     Route::patch('/orders/{order}/received', [OrderController::class, 'received'])->name('orders.received');
-
-    Route::get('/file/serve/payment/{file}', [FileAccessController::class, 'serve'])->name('images.payment');
 });
 
 Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
@@ -68,6 +67,20 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
             Route::patch('/{category}', [CategoryController::class, 'update'])->name('categories.update');
             Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
             Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+        });
+
+        Route::prefix('orders')->group(function(){
+            Route::get('/', [AdminOrderController::class, 'all'])->name('admin.orders.index');
+            Route::get('/new', [AdminOrderController::class, 'newList'])->name('admin.orders.newlist');
+            Route::get('/process', [AdminOrderController::class, 'processList'])->name('admin.orders.processlist');
+            Route::get('/delivered', [AdminOrderController::class, 'deliveredList'])->name('admin.orders.deliveredlist');
+            Route::get('/done', [AdminOrderController::class, 'doneList'])->name('admin.orders.donelist');
+            Route::get('/cancel', [AdminOrderController::class, 'cancelList'])->name('admin.orders.cancellist');
+            Route::get('/{order}', [AdminOrderController::class, 'show'])->name('admin.orders.show');
+            Route::patch('/{order}/cancel', [AdminOrderController::class, 'cancel'])->name('admin.orders.cancel');
+            Route::patch('/{order}/confirm', [AdminOrderController::class, 'confirm'])->name('admin.orders.confirm');
+            Route::patch('/{order}/delivered', [AdminOrderController::class, 'delivered'])->name('admin.orders.delivered');
+            Route::patch('/{order}/done', [AdminOrderController::class, 'done'])->name('admin.orders.done');
         });
 
         Route::prefix('products')->group(function(){
@@ -86,6 +99,8 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
 
         Route::resource('payments', PaymentController::class);
     });
+
+    Route::get('/file/serve/payment/{file}', [FileAccessController::class, 'serve'])->name('images.payment');
 });
 
 Route::prefix('email')->group(function () {
