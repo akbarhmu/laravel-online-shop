@@ -12,6 +12,7 @@ use App\Http\Controllers\user\CartController;
 use App\Http\Controllers\user\CheckoutController;
 use App\Http\Controllers\user\OrderController;
 use App\Http\Controllers\user\PageController;
+use App\Http\Controllers\user\ServiceController;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -35,6 +36,11 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/product', [PageController::class, 'showAllProduct'])->name('user.products.index');
 Route::get('/category/{category}', [PageController::class, 'showProductCategory'])->name('categories.show');
 Route::get('product/{product}', [PageController::class, 'product'])->name('products.show');
+Route::prefix('service')->group(function () {
+    Route::get('/', [ServiceController::class, 'index'])->name('services.index');
+    Route::post('/', [ServiceController::class, 'store'])->name('services.store');
+    Route::get('/{service}', [ServiceController::class, 'show'])->name('services.show');
+});
 Route::get('/contact', [PageController::class, 'contact'])->name('contacts.index');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {

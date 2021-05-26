@@ -24,14 +24,6 @@
 
                 <!-- Main Content -->
                 @yield('content')
-                <footer class="main-footer">
-                    <div class="footer-left">
-                        <x-copyright />
-                    </div>
-                    <div class="footer-right">
-
-                    </div>
-                </footer>
             </div>
         </div>
 
