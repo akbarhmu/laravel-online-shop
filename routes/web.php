@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\OrderController as AdminOrderController;
 use App\Http\Controllers\dashboard\PaymentController;
 use App\Http\Controllers\dashboard\ProductController;
+use App\Http\Controllers\dashboard\ServiceController as AdminServiceController;
 use App\Http\Controllers\dashboard\ShopController;
 use App\Http\Controllers\FileAccessController;
 use App\Http\Controllers\user\AddressController;
@@ -96,6 +97,12 @@ Route::middleware(['auth:sanctum', 'verified', 'admin'])->group(function () {
             Route::patch('/{product}', [ProductController::class, 'update'])->name('products.update');
             Route::get('{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
             Route::delete('/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+        });
+
+        Route::prefix('services')->group(function () {
+            Route::get('/', [AdminServiceController::class, 'index'])->name('admin.services.index');
+            Route::get('/{service}', [AdminServiceController::class, 'show'])->name('admin.services.show');
+            Route::patch('/{service}', [AdminServiceController::class, 'update'])->name('admin.services.update');
         });
 
         Route::prefix('shop')->group(function(){
