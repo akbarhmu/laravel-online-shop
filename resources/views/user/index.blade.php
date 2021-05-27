@@ -210,7 +210,7 @@
                                         <div class="col-12 col-md-4 col-lg-2 mx-auto p-0">
                                             <div class="card mb-2">
                                                 <div class="view overlay">
-                                                    <img class="card-img-top" src="{{asset('storage/'.$product->image)}}" alt="Card image cap">
+                                                    <img class="card-img-top" src="{{asset($product->image)}}" alt="Card image cap">
                                                 </div>
                                                 <div class="card-body p-3">
                                                     <h5 class="card-title font-weight-bold fuchsia-rose-text mb-0">{{$product->name}}</h5>

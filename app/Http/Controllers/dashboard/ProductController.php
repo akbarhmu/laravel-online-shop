@@ -29,10 +29,11 @@ class ProductController extends Controller
     {
         $validatedData = $request->validated();
 
-        $imagePath = $validatedData['image']->store('products', 'public');
+        $filename = $validatedData['image']->hashName();
+        $imagePath = $validatedData['image']->move('images/products/', $filename);
         if(extension_loaded("gd")||extension_loaded("gd2")){
-            $image = Image::make('storage/'.$imagePath)->resize(375,375);
-            $image->save('storage/'.$imagePath, 90);
+            $image = Image::make($imagePath)->resize(375,375);
+            $image->save($imagePath, 90);
         }
 
         $product = new Product();
@@ -87,15 +88,16 @@ class ProductController extends Controller
             $product->category_id = $validatedData['category_id'];
 
             if($request->hasFile('image')){
-                $oldImagePath = 'storage/'.$product->image;
+                $oldImagePath = $product->image;
                 if(File::exists($oldImagePath)){
                     File::delete($oldImagePath);
                 }
 
-                $newImagePath = $validatedData['image']->store('products', 'public');
+                $filename = $validatedData['image']->hashName();
+                $newImagePath = $validatedData['image']->move('images/products/', $filename);
                 if(extension_loaded("gd")||extension_loaded("gd2")){
-                    $newImage = Image::make('storage/'.$newImagePath)->resize(375,375);
-                    $newImage->save('storage/'.$newImagePath, 90);
+                    $newImage = Image::make($newImagePath)->resize(375,375);
+                    $newImage->save($newImagePath, 90);
                 }
                 $product->image = $newImagePath;
             }
@@ -116,7 +118,7 @@ class ProductController extends Controller
 
         if($product != null){
             try{
-                $imagePath = 'storage/'.$product->image;
+                $imagePath = $product->image;
 
                 $product->delete();
 

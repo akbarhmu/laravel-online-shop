@@ -28,7 +28,7 @@
                         <div class="block-4 text-center border">
                             <a href="{{route('products.show', $product->id)}}">
                                 <figure class="block-4-image">
-                                    <img src="{{asset('storage/'.$product->image)}}" alt="Image placeholder" class="img-fluid">
+                                    <img src="{{asset($product->image)}}" alt="Image placeholder" class="img-fluid">
                                 </figure>
                                 <div class="block-4-text p-4">
                                     <h3>{{$product->name}}</h3>
