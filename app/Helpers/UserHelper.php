@@ -2,6 +2,7 @@
 namespace App\Helpers;
 
 use App\Models\Cart;
+use App\Models\Order;
 
 class User {
     public static function set_active($path, $active = 'active') {
@@ -12,5 +13,8 @@ class User {
     }
     public static function getCartCount($id) {
         return Cart::where('user_id', $id)->count();
+    }
+    public static function getNewOrderCount($id) {
+        return Order::where('status', 1)->where('user_id', $id)->count();
     }
 }
