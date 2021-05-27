@@ -16,7 +16,7 @@ class UserHelper {
         return Cart::where('user_id', $id)->count();
     }
     public static function getNewOrderCount($id) {
-        return Order::where('status', 1)->where('user_id', $id)->count();
+        return Order::where('status', 1)->orWhere('status', 2)->orWhere('status', 3)->orWhere('status', 4)->where('user_id', $id)->count();
     }
     public static function getShopData($column) {
         return Shop::join('cities','shops.city_id','=','cities.id')
