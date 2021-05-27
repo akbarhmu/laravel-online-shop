@@ -28,7 +28,7 @@
                             <div class="intro-text text-center text-md-left">
                                 <p class="mb-4">Melayani perbaikan atau servis semua jenis alat elektronik cepat murah bergaransi. </p>
                                 <p>
-                                    <a href="#pesanForm" class="btn btn-sm btn-dark">Pesan Sekarang</a>
+                                    <a href="#pesanForm" class="btn btn-sm btn-dark">{{__('Order Now')}}</a>
                                 </p>
                             </div>
                         </div>
@@ -47,42 +47,42 @@
                         <form action="" method="post" id="service-form" class="text-black" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="name">Nama <span class="text-danger">*</span></label>
+                                <label for="name">{{__('Name')}} <span class="text-danger">*</span></label>
                                 <input type="text" name="name" id="name" class="form-control" value="{{old('name')}}" required>
                                 <x-jet-input-error for="name"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <label for="address">Address <span class="text-danger">*</span></label>
+                                <label for="address">{{__('Address')}} <span class="text-danger">*</span></label>
                                 <input type="text" name="address" id="address" class="form-control" value="{{old('address')}}" required>
                                 <x-jet-input-error for="address"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <label for="name">Nomor Telepon <span class="text-danger">*</span></label>
+                                <label for="name">{{__('Phone Number')}} <span class="text-danger">*</span></label>
                                 <input type="text" name="phone" id="phone" class="form-control" value="{{old('phone')}}" required>
                                 <x-jet-input-error for="phone"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <label for="product_name">Nama Barang <span class="text-danger">*</span></label>
+                                <label for="product_name">{{__('Product Name')}} <span class="text-danger">*</span></label>
                                 <input type="text" name="product_name" id="product_name" class="form-control" value="{{old('product_name')}}" required>
                                 <x-jet-input-error for="product_name"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <label for="product_merk">Merk dan Tipe/Model</label>
+                                <label for="product_merk">{{__('Merk dan Tipe/Model')}}</label>
                                 <input type="text" name="product_merk" id="product_merk" class="form-control" value="{{old('product_merk')}}">
                                 <x-jet-input-error for="product_merk"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <label for="keluhan">Keluhan <span class="text-danger">*</span></label>
+                                <label for="keluhan">{{__('Keluhan')}} <span class="text-danger">*</span></label>
                                 <textarea type="text" name="keluhan" id="keluhan" class="form-control" required>{{old('keluhan')}}</textarea>
                                 <x-jet-input-error for="keluhan"></x-jet-input-error>
                             </div>
                             <div class="form-group">
-                                <label for="image">Foto <span class="text-danger">*</span></label>
+                                <label for="image">{{__('Photo')}} <span class="text-danger">*</span></label>
                                 <input type="file" name="image" accept="image/*" id="image" class="form-control" required>
                                 <x-jet-input-error for="image"></x-jet-input-error>
                             </div>
                             {!! HCaptcha::display() !!}
-                            <button type="submit" class="btn btn-dark btn-md">Kirim</button>
+                            <button type="submit" class="btn btn-dark btn-md">{{__('Send')}}</button>
                             @if ($errors->has('h-captcha-response'))
                                 <span class="help-block text-danger">
                                     <strong>{{ $errors->first('h-captcha-response') }}</strong>

@@ -4,7 +4,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{route('index')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{__('Products')}}</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{route('index')}}">{{__('Home')}}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{__('Products')}}</strong></div>
         </div>
       </div>
     </div>
@@ -16,7 +16,7 @@
 
             <div class="row">
               <div class="col-md-12">
-                <div class="float-md-left mb-4"><h2 class="text-black h5">Produk "{{$keyword}}"</h2></div>
+                <div class="float-md-left mb-4"><h2 class="text-black h5">{{__('Products')}} "{{$keyword}}"</h2></div>
                 {{-- <div class="d-flex">
 
                 </div> --}}
