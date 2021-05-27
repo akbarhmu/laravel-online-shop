@@ -29,7 +29,7 @@ class AddressController extends Controller
             $user->postal_code = $validatedData['postal_code'];
             $user->save();
 
-            return back()->with('status', __("Address successfully updated"));
+            return back()->with('status', __("Address successfuly updated"));
         }catch(Exception $e){
             return back()->withInput()->with('error', __("Address can't be updated"));
         }
