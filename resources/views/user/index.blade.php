@@ -89,10 +89,26 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link {{Custom::set_active(['/'])}} js-scroll-trigger" href="{{route('index')}}">{{__('Home')}}</a></li>
-                        <li class="nav-item"><a class="nav-link {{Custom::set_active(['product*'])}} js-scroll-trigger" href="{{route('user.products.index')}}">{{__('Products')}}</a></li>
-                        <li class="nav-item"><a class="nav-link {{Custom::set_active(['service*'])}} js-scroll-trigger" href="{{route('services.index')}}">{{__('Services')}}</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">{{__('Contact')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('index')}}">{{__('Home')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('user.products.index')}}">{{__('Products')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('services.index')}}">{{__('Service')}}</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('contacts.index')}}">{{__('Contact')}}</a></li>
+                        @if (Auth::check())
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('carts.index')}}">{{__('Cart')}}</a>
+                                    <a class="dropdown-item" href="{{route('orders.index')}}">{{__('Orders')}}</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('profile.address')}}">{{__('Address')}}</a>
+                                    <a class="dropdown-item" href="{{route('profile.show')}}">{{__('Manage Account')}}</a>
+                                </div>
+                            </li>
+                        @else
+                            <li class="nav-item"><a class="nav-link {{Custom::set_active(['contact*'])}} js-scroll-trigger" href="{{route('login')}}">{{__('Login')}}</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -168,7 +184,7 @@
         <!-- Products-->
         <section class="page-section" id="products">
             <div class="container">
-                <h2 class="text-center mt-0">Produk Unggulan</h2>
+                <h2 class="text-center mt-0">{{__('Featured Products')}}</h2>
                 <hr class="divider my-4" />
                 <section>
                     <div id="carousel-example-multi" class="carousel slide carousel-multi-item v-2 product-carousel" data-ride="carousel">
@@ -225,7 +241,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="mt-0">Hubungi Kami!</h2>
+                        <h2 class="mt-0">{{__('Contact Us')}}</h2>
                         <hr class="divider my-4" />
                         <p class="text-muted mb-5">Jam layanan: 8.00 - 17.00 | Tanggal merah dan hari libur nasional LIBUR</p>
                     </div>
