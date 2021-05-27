@@ -41,4 +41,9 @@ class PageController extends Controller
         $categories = Category::withCount('products')->get();
         return view('user.product.search', ['products'=>$products, 'categories'=>$categories, 'keyword'=>$keyword]);
     }
+
+    public function contact()
+    {
+        return view('user.contact');
+    }
 }
