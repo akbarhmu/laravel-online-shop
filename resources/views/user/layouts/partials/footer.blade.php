@@ -35,8 +35,8 @@
             <div class="block-5 mb-5">
                 <h3 class="footer-heading mb-4">{{__('Contact Info')}}</h3>
                 <ul class="list-unstyled">
-                    <li class="address">{{$site_address}}</li>
-                    <li class="phone"><a href="tel://{{$site_phone}}">{{$site_phone}}</a></li>
+                    <li class="address">{{Custom::getShopAddress()}}</li>
+                    <li class="phone"><a href="tel://{{ Custom::getShopData('phone') }}">{{ Custom::getShopData('phone') }}</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="col-md-12">
         <p>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> {{$site_title}} Team | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> {{ Custom::getShopData('name') }} Team | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         </p>
         </div>

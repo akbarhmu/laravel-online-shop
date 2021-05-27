@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>{{$site_title}}</title>
+        <title>{{ Custom::getShopData('name') }}</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -85,7 +85,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">{{$site_title}}</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ Custom::getShopData('name') }}</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
@@ -122,7 +122,7 @@
                         <hr class="divider my-4" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-0">{{$site_title}} menyediakan berbagai macam produk elektronik baru maupun bekas</p>
+                        <p class="text-white-75 font-weight-light mb-0">{{ Custom::getShopData('name') }} menyediakan berbagai macam produk elektronik baru maupun bekas</p>
                         <p class="text-white-75 font-weight-light mb-5">Kami juga menyediakan layanan service produk elektronis mulai dari TV, monitor, komputer, kulkas dan lain-lain</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('user.products.index')}}"><i class="fas fa-shopping-cart"></i> {{__('Products')}}</a>
                         <a class="btn btn-primary btn-xl js-scroll-trigger ml-3" href="{{route('services.index')}}"><i class="fas fa-tools"></i> {{__('Service')}}</a>
@@ -137,8 +137,8 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">Belanja dan Service Serasa di Surga!</h2>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">{{$site_title}} menyediakan berbagai macam produk dan terdapat layanan servis produk elektronik! Hanya dengan daftar dan nikmati berbagai fitur yang ada di web ini!</p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Apa saja di {{$site_title}}?</a>
+                        <p class="text-white-50 mb-4">{{ Custom::getShopData('name') }} menyediakan berbagai macam produk dan terdapat layanan servis produk elektronik! Hanya dengan daftar dan nikmati berbagai fitur yang ada di web ini!</p>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Apa saja di {{ Custom::getShopData('name') }}?</a>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,7 @@
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
-                <h2 class="text-center mt-0">Tentang {{$site_title}}</h2>
+                <h2 class="text-center mt-0">Tentang {{ Custom::getShopData('name') }}</h2>
                 <hr class="divider my-4" />
                 <div class="row">
                     <div class="col-lg-3 col-md-6 text-center">
@@ -249,7 +249,7 @@
                 <div class="row">
                     <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
                         <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                        <a class="d-block" href="telp:{{$site_phone}}">{{$site_phone}}</a>
+                        <a class="d-block" href="telp:{{ Custom::getShopData('phone') }}">{{ Custom::getShopData('phone') }}</a>
                     </div>
                     <div class="col-lg-4 mr-auto text-center">
                         <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
@@ -267,7 +267,7 @@
                     <script>
                         document.write(new Date().getFullYear());
                     </script>
-                    - {{$site_title}} Team
+                    - {{ Custom::getShopData('name') }} Team
                 </div>
             </div>
         </footer>

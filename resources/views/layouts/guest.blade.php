@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') | {{ $site_title }}</title>
+        <title>@yield('title') | {{ Custom::getShopData('name') }}</title>
 
         <!- Favicon -->
         <link rel="icon" href="{{asset('images/logo/logo.png')}}">
