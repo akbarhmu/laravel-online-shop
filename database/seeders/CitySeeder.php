@@ -18,6 +18,7 @@ class CitySeeder extends Seeder
         $cities = RajaOngkir::kota()->all();
         foreach($cities as $city){
             City::create([
+                'id' => $city['city_id'],
                 'province_id' => $city['province_id'],
                 'city_name' => $city['type'].' '.$city['city_name'],
                 'postal_code' => $city['postal_code'],

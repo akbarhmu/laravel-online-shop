@@ -16,7 +16,7 @@
 
             <div class="row">
               <div class="col-md-12">
-                <div class="float-md-left mb-4"><h2 class="text-black h5">{{__('All Products')}}</h2></div>
+                <div class="float-md-left mb-4"><h2 class="text-black h5">{{__('Products')}} "{{$keyword}}"</h2></div>
                 {{-- <div class="d-flex">
 
                 </div> --}}

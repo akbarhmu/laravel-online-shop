@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,8 @@ class DashboardController extends Controller
         $customersCount = User::where('isAdmin', false)->count();
         $ordersCount    = Order::count();
         $incomes        = Order::where('status', 5)->sum('total');
-        return view('admin.index', ['customersCount'=>$customersCount, 'ordersCount'=>$ordersCount, 'incomes'=>$incomes]);
+        $servicesCount  = Service::count();
+        return view('admin.index', ['customersCount'=>$customersCount, 'ordersCount'=>$ordersCount, 'incomes'=>$incomes, 'servicesCount'=>$servicesCount]);
     }
 
     /**

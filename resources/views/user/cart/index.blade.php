@@ -4,7 +4,7 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="{{route('index')}}">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{__('Cart')}}</strong></div>
+          <div class="col-md-12 mb-0"><a href="{{route('index')}}">{{__('Home')}}</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">{{__('Cart')}}</strong></div>
         </div>
       </div>
     </div>
@@ -34,10 +34,10 @@
                 <thead>
                   <tr>
                     <th class="product-thumbnail">{{__('Image')}}</th>
-                    <th class="product-name">{{__('Product')}}</th>
+                    <th class="product-name">{{__('Product Name')}}</th>
                     <th class="product-price">{{__('Price')}}</th>
                     <th class="product-quantity">{{__('Jumlah')}}</th>
-                    <th class="product-total">{{__('Total')}}</th>
+                    <th class="product-total">{{__('Subtotal')}}</th>
                     <th class="product-remove">{{__('Remove')}}</th>
                   </tr>
                 </thead>
@@ -95,7 +95,7 @@
                 </form>
               </div>
               <div class="col-md-6">
-                <a href="{{route('user.products.index')}}" class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</a>
+                <a href="{{route('user.products.index')}}" class="btn btn-outline-primary btn-sm btn-block">{{__('Continue Shopping')}}</a>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="row mb-3">
                   <div class="col-md-6">
-                    <span class="text-black">Subtotal</span>
+                    <span class="text-black">{{__('Subtotal')}}</span>
                   </div>
                   <div class="col-md-6 text-right">
                     <strong class="text-black">@rupiah($subtotal)</strong>

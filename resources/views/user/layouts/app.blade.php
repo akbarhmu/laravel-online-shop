@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{asset('css/user/aos.css')}}">
     <link rel="stylesheet" href="{{asset('css/user/style.css')}}">
 
+    <!- Favicon -->
+    <link rel="icon" href="{{asset('images/logo/logo.png')}}">
+
     @yield('css')
 
   </head>

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Service;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class ServiceController extends Controller

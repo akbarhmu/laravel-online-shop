@@ -37,7 +37,7 @@
                 <p class="badge badge-dark">{{$product->categories->name}}</p>
                 <p><strong class="text-primary h4">@rupiah($product->price)</strong></p>
                 <div class="mb-5">
-                    <p class="mb-0">Available Stock: {{$product->quantity}}</p>
+                    <p class="mb-0">{{__('Available Stock')}}: {{$product->quantity}}</p>
                     <div class="input-group" style="max-width: 120px;">
                         <div class="input-group-prepend">
                             <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
@@ -51,9 +51,9 @@
                 </div>
                 <p>
                 @if ($product->quantity>0)
-                    <button type="submit" class="buy-now btn btn-sm btn-primary">Add To Cart</button>
+                    <button type="submit" class="buy-now btn btn-sm btn-primary">{{__('Add To Cart')}}</button>
                 @else
-                    <button class="buy-now btn btn-sm btn-primary" disabled>Stok Habis</button>
+                    <button class="buy-now btn btn-sm btn-primary" disabled>{{__('Sold Out')}}</button>
                 @endif
                 </p>
             </form>

@@ -47,7 +47,7 @@
                             <h4>{{__('Services')}}</h4>
                         </div>
                         <div class="card-body">
-                            0
+                            {{$servicesCount}}
                         </div>
                     </div>
                 </div>

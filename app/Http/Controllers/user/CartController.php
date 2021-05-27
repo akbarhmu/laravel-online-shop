@@ -9,7 +9,6 @@ use App\Models\Product;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Kavist\RajaOngkir\Facades\RajaOngkir;
 
 class CartController extends Controller
 {

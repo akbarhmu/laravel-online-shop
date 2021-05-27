@@ -18,6 +18,7 @@ class ProvinceSeeder extends Seeder
         $provinces = RajaOngkir::provinsi()->all();
         foreach($provinces as $province){
             Province::create([
+                'id' => $province['province_id'],
                 'province' => $province['province'],
             ]);
         }

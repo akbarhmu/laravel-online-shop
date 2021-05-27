@@ -8,7 +8,7 @@
             <div class="col-md-8">
                 <div class="section-body">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-primary text-light">
                             {{__('Current Address')}}
                         </div>
                         <div class="card-body">

@@ -7,6 +7,9 @@
 
         <title>@yield('title') | {{ $site_title }}</title>
 
+        <!- Favicon -->
+        <link rel="icon" href="{{asset('images/logo/logo.png')}}">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
