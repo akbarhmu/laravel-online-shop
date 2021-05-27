@@ -37,20 +37,5 @@ class UserServiceProvider extends ServiceProvider
         Blade::directive('rupiah', function ($expression) {
             return "Rp. <?php echo number_format($expression, 0, ',', '.'); ?>";
         });
-
-        // Global Variables
-        $shop = Shop::join('cities','shops.city_id','=','cities.id')
-                        ->join('provinces','shops.province_id','=','provinces.id')
-                        ->select('shops.*', 'cities.city_name', 'provinces.province as province_name')
-                        ->where('shops.id','=', 1)
-                        ->first();
-        View::share('site_title', $shop->name);
-        View::share('site_phone', $shop->phone);
-        View::share('site_address', $shop->address);
-        View::share('site_subdistrict', $shop->subdistrict);
-        View::share('site_city_name', $shop->city_name);
-        View::share('site_province_name', $shop->province_name);
-        View::share('site_postal_code', $shop->postal_code);
-        View::share('site_full_address', $shop->address.", ".$shop->subdistrict.", ".$shop->city_name.", ".$shop->province_name." ".$shop->postal_code);
     }
 }

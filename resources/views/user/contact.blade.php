@@ -22,17 +22,17 @@
                         style="border:0; width: 100%; min-height: 450px;"
                         loading="lazy"
                         allowfullscreen
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBxM-n0UKR_2m_2qII3trayR43LYd8cl60&q={{urlencode($site_address)}}&zoom=16">
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBxM-n0UKR_2m_2qII3trayR43LYd8cl60&q={{urlencode(Custom::getShopAddress())}}&zoom=16">
                         </iframe>
                 </div>
                 <div class="col-md-4 p-4">
                     <div class="p-4 border mb-3">
                         <span class="d-block text-primary h6 text-uppercase">{{__('Address')}}</span>
-                        <p class="mb-0">{{$site_address}}</p>
+                        <p class="mb-0">{{ Custom::getShopAddress() }}</p>
                     </div>
                     <div class="p-4 border mb-3">
                         <span class="d-block text-primary h6 text-uppercase">{{__('Phone Number')}}</span>
-                        <p class="mb-0">{{$site_phone}}</p>
+                        <p class="mb-0">{{ Custom::getShopData('phone') }}</p>
                     </div>
                 </div>
               </div>

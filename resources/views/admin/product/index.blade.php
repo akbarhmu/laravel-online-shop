@@ -49,7 +49,7 @@
                                     <td>{{$product->weight}}g</td>
                                     <td>{{$product->category_name}}</td>
                                     <td>{{$product->quantity}}</td>
-                                    <td><img class="product-photo" src="{{asset('storage/'.$product->image)}}" alt="" srcset=""></td>
+                                    <td><img class="product-photo" src="{{asset($product->image)}}" alt="" srcset=""></td>
                                     <td class="text-center">
                                         <div style="display: inline-flex;">
                                             <div class="p-1">

@@ -206,7 +206,7 @@ return [
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
-        'Custom' => App\Helpers\User::class,
+        'Custom' => App\Helpers\UserHelper::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Date' => Illuminate\Support\Facades\Date::class,
         'DB' => Illuminate\Support\Facades\DB::class,

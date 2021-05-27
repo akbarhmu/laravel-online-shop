@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{route('dashboard')}}">{{ $site_title }}</a>
+            <a href="{{route('dashboard')}}">{{ Custom::getShopData('name') }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{route('dashboard')}}"><img src="{{asset('images/logo/logo.png')}}" alt="" srcset="" style="width: 25px; height: 25px;"></a>

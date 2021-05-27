@@ -49,7 +49,7 @@
                         <tr>
                             <input type="hidden" name="product_id[]" value="{{$cart->product_id}}">
                             <td class="product-thumbnail">
-                                <img src="{{asset('storage/'.$cart->image)}}" alt="Image" class="img-fluid">
+                                <img src="{{asset($cart->image)}}" alt="Image" class="img-fluid">
                             </td>
                             <td class="product-name">
                             <h2 class="h5 text-black">{{$cart->product_name}}</h2>

@@ -27,7 +27,7 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <img src="{{asset('storage/'.$product->image)}}" alt="Image" class="img-fluid">
+            <img src="{{asset($product->image)}}" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6">
             <form action="{{route('carts.store')}}" method="post">

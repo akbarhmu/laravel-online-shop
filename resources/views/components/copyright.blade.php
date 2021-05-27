@@ -1,1 +1,1 @@
-Copyright &copy; 2021 {{ $site_title }}
+Copyright &copy; 2021 {{ Custom::getShopData('name') }}
