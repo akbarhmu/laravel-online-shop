@@ -1,10 +1,10 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="200"></a></p>
+<p align="center"><a href="https://github.com/Gasiyu/ElectroParadizo" target="_blank"><img src="https://raw.githubusercontent.com/Gasiyu/ElectroParadizo/main/public/images/logo/logo.png?token=AQJC6VFPPAKHRZPVBWVM3B3AXBDJU" width="50"></a></p>
 
 <p align="center">
-ElectroParadizo: Simple Online Store Website Built With Laravel
+<b>ElectroParadizo: Simple Online Store Website Built With Laravel</b>
 </p>
 
-Simple online store website built with laravel and jetstrap (livewire). The purpose of this projects is for educational only, this was my first production app in my life, so it contains a lot of inefficient algorithms such as repeating the code.
+Simple online store website built with laravel and jetstrap (livewire). The purpose of this projects is for educational only, this was our first production app in my life, so it contains a lot of inefficient algorithms such as repeating the code and we also messed up with conventional commits.
 
 Beside Laravel, this project uses other tools like:
 - [Jetstrap (Jetstream+Bootstrap)](https://github.com/nascent-africa/jetstrap)
@@ -13,9 +13,13 @@ Beside Laravel, this project uses other tools like:
 - [Stisla Admin Template](https://github.com/stisla/stisla)
 - [kavist/rajaongkir](https://github.com/kavist/rajaongkir)
 - [Intervention/image](https://github.com/Intervention/image)
+- [Scyllaly/hcaptcha](https://github.com/Scyllaly/hcaptcha)
+
+This project is inspired from [fikrisuheri/laravel-toko-online](https://github.com/fikrisuheri/laravel-toko-online)
 
 ## Features
 - Integration with RajaOngkir
+- Integration with BinderByte shipping tracker api
 
 ## Requirement
 
@@ -32,22 +36,53 @@ cd ElectroParadizo
 cp .env.example .env
 ```
 
-Open `.env`, change `DB_DATABASE` according to your needs, then create a database with that name. Change `RAJAONGKIR_API_KEY` with apikey that you can get from [here](https://rajaongkir.com/akun/panel).
-
+Open `.env`, change `DB_DATABASE` according to your needs, then create a database with that name.
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=electroparadizo
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Change `RAJAONGKIR_API_KEY` with apikey that you can obtain them from [here](https://rajaongkir.com/akun/panel). Make sure RAJAONGKIR_PACKAGE is starter, because we didn't support PRO package at the moment. This api used to calculate the delivery cost.
+```
+RAJAONGKIR_API_KEY=
+RAJAONGKIR_PACKAGE=starter
+```
+Change `BINDERBYTE_API_KEY` with apikey that you can obtain them from [here](https://dashboard.binderbyte.com/profile), this  used for track shipping.
+```
+BINDERBYTE_API_KEY=
+```
+Change `HCAPTCHA` secret and sitekey, you can obtain them from [here](https://dashboard.hcaptcha.com/sites). This used for captcha validation at service menu.
+```
+HCAPTCHA_SECRET=
+HCAPTCHA_SITEKEY=
+```
+Install required dependency and rebuild asset : 
 ```
 composer install
 npm install
 npm run dev
-
+```
+Generate application key :
+```
 php artisan key:generate
+```
+Run the migrations with the seeds, this need internet connection :
+```
 php artisan migrate:fresh --seed
+```
+Create storage symbolic link :
+```
 php artisan storage:link
-
+```
+```
 php artisan serve
 ```
 
-Go to http://localhost:8000 . Use `admin@mail.com` with password `admin` to login at admin dashboard.
+Open http://localhost:8000 in browser, use email `admin@mail.com` and password `admin` to login.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`ElectroParadizo` is licensed under [The MIT license (MIT)](https://electro-paradizo.mit-license.org/).
