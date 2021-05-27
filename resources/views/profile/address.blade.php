@@ -105,7 +105,7 @@
 
         setTimeout(function() {
             $('#city_id').val({{old('city_id', Auth::user()->city_id)}});
-        }, 500);
+        }, 1500);
     });
 </script>
 @endsection
