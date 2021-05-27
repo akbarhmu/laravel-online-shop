@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="section-body">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-primary text-light">
                         <h4>{{__('Profile')}}</h4>
                         </div>
                         <div class="card-body">
