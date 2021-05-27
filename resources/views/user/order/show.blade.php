@@ -110,7 +110,7 @@
                                     <tbody>
                                         @foreach($products as $product)
                                         <tr>
-                                            <td><img src="{{ asset('storage/'.$product->product_image) }}" alt="" srcset="" width="50"></td>
+                                            <td><img src="{{ asset($product->product_image) }}" alt="" srcset="" width="50"></td>
                                             <td>{{ $product->product_name }}</td>
                                             <td>{{ $product->product_quantity }}</td>
                                             <td>@rupiah($product->product_subtotal)</td>
