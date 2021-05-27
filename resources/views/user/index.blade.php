@@ -166,18 +166,20 @@
                                 <div class="bbb_viewed_slider_container">
                                     <div class="owl-carousel owl-theme bbb_viewed_slider">
                                         @foreach ($products as $product)
-                                            <div class="owl-item">
-                                                <div
-                                                    class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                                    <div class="bbb_viewed_image"><img
-                                                            src="{{asset($product->image)}}"
-                                                            alt=""></div>
-                                                    <div class="bbb_viewed_content text-center">
-                                                        <div class="bbb_viewed_price">@rupiah($product->price)</div>
-                                                        <div class="bbb_viewed_name"><a href="#">{{$product->name}}</a></div>
+                                            <a href="{{route('products.show', $product->id)}}">
+                                                <div class="owl-item">
+                                                    <div
+                                                        class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                                        <div class="bbb_viewed_image"><img
+                                                                src="{{asset($product->image)}}"
+                                                                alt=""></div>
+                                                        <div class="bbb_viewed_content text-center">
+                                                            <div class="bbb_viewed_price">@rupiah($product->price)</div>
+                                                            <div class="bbb_viewed_name">{{$product->name}}</div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         @endforeach
                                     </div>
                                 </div>
