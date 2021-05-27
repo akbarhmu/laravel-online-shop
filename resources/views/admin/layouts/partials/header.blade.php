@@ -16,6 +16,9 @@
         <a href="{{ route('profile.show') }}" class="dropdown-item has-icon">
             <i class="far fa-user"></i> {{ __('Profile') }}
         </a>
+        <a href="{{ route('profile.address') }}" class="dropdown-item has-icon">
+            <i class="far fa-map"></i> {{ __('Address') }}
+        </a>
         <div class="dropdown-divider"></div>
         <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger"
                                         onclick="event.preventDefault();
