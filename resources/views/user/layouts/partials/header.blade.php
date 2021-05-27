@@ -41,13 +41,13 @@
                     <li>
                         <a href="{{route('carts.index')}}" class="site-cart">
                             <span class="icon icon-add_shopping_cart"></span>
-                            {{-- <span class="count"></span> --}}
+                            <span class="count">{{Custom::getCartCount(Auth::user()->id)}}</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{route('orders.index')}}" class="site-cart">
                             <span class="icon icon-shopping_cart"></span>
-                            {{-- <span class="count">2</span> --}}
+                            <span class="count">{{Custom::getNewOrderCount(Auth::user()->id)}}</span>
                         </a>
                     </li>
                     <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
@@ -77,7 +77,7 @@
         <li class="{{Custom::set_active(['/'])}}"><a href="{{route('index')}}">{{__('Home')}}</a></li>
         <li class="{{Custom::set_active(['product*', 'category*'])}}"><a href="{{route('user.products.index')}}">{{__('Products')}}</a></li>
         <li class="{{Custom::set_active(['service*'])}}"><a href="{{route('services.index')}}">{{__('Service')}}</a></li>
-        <li class="{{Custom::set_active(['contact'])}}"><a href="#">Contact</a></li>
+        <li class="{{Custom::set_active(['contact'])}}"><a href="{{route('contacts.index')}}">{{__('Contact')}}</a></li>
         </ul>
     </div>
     </nav>
