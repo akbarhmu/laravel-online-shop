@@ -147,7 +147,7 @@
 
             setTimeout(function() {
                 $('#city_id').val({{old('city_id', $shop->city_id)}});
-            }, 500);
+            }, 1500);
         });
     </script>
 @endsection
