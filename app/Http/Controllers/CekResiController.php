@@ -11,7 +11,7 @@ class CekResiController extends Controller
     public static function getApiCekResi($courier,$awb){
         $kurir = $courier;
         $awb = $awb;
-        $api_key = env('BINDERBYTE_API_KEY', 'null');
+        $api_key = config('services.binderbyte.key');
         $response = Http::get('https://api.binderbyte.com/v1/track?api_key='.$api_key.'&courier='.$kurir.'&awb='.$awb.'')
                             ->json();
         return $response;
