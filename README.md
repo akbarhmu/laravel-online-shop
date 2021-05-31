@@ -4,7 +4,7 @@
 <b>ElectroParadizo: Simple Online Store Website Built With Laravel</b>
 </p>
 
-Simple online store website built with laravel and jetstrap (livewire). The purpose of this projects is for educational only, this was our first production app in my life, so it contains a lot of inefficient algorithms such as repeating the code and we also messed up with conventional commits.
+Simple online store website built with laravel. The purpose of this projects is for fulfill the final project of web programming. This was our first production app, so it contains a lot of inefficient algorithms such as repeating the code, also we messed up with conventional commits messages.
 
 Beside Laravel, this project uses other tools like:
 - [Jetstrap (Jetstream+Bootstrap)](https://github.com/nascent-africa/jetstrap)
@@ -45,12 +45,12 @@ DB_DATABASE=electroparadizo
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-Change `RAJAONGKIR_API_KEY` with apikey that you can obtain them from [here](https://rajaongkir.com/akun/panel). Make sure RAJAONGKIR_PACKAGE is starter, because we didn't support PRO package at the moment. This api used to calculate the delivery cost.
+Change `RAJAONGKIR_API_KEY` with apikey that you can obtain them from [here](https://rajaongkir.com/akun/panel). Make sure RAJAONGKIR_PACKAGE is starter, because we didn't support PRO package at the moment. This API is used for calculating the shipping cost.
 ```
 RAJAONGKIR_API_KEY=
 RAJAONGKIR_PACKAGE=starter
 ```
-Change `BINDERBYTE_API_KEY` with apikey that you can obtain them from [here](https://dashboard.binderbyte.com/profile), this  used for track shipping.
+Change `BINDERBYTE_API_KEY` with apikey that you can obtain them from [here](https://dashboard.binderbyte.com/profile), this  used for shipping tracking.
 ```
 BINDERBYTE_API_KEY=
 ```
