@@ -31,7 +31,7 @@ This project is inspired from [fikrisuheri/laravel-toko-online](https://github.c
 ## Installation
 
 ```
-git clone https://github.com/Gasiyu/ElectroParadizo.git
+git clone https://github.com/akbarhmu/ElectroParadizo.git
 cd ElectroParadizo
 cp .env.example .env
 ```
