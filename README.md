@@ -1,7 +1,7 @@
-<p align="center"><a href="https://github.com/Gasiyu/ElectroParadizo" target="_blank"><img src="https://raw.githubusercontent.com/Gasiyu/ElectroParadizo/main/public/images/logo/logo.png?token=AQJC6VFPPAKHRZPVBWVM3B3AXBDJU" width="50"></a></p>
+<p align="center"><a href="https://github.com/akbarhmu/laravel-online-shop" target="_blank"><img src="https://raw.githubusercontent.com/akbarhmu/laravel-online-shop/main/public/images/logo/logo.png?token=AQJC6VFPPAKHRZPVBWVM3B3AXBDJU" width="50"></a></p>
 
 <p align="center">
-<b>ElectroParadizo: Simple Online Store Website Built With Laravel</b>
+<b>Simple Online Store Website Built With Laravel</b>
 </p>
 
 Simple online store website built with laravel. The purpose of this projects is for fulfill the final project of web programming. This was our first production app, so it contains a lot of inefficient algorithms such as repeating the code, also we messed up with conventional commits messages.
@@ -31,8 +31,8 @@ This project is inspired from [fikrisuheri/laravel-toko-online](https://github.c
 ## Installation
 
 ```
-git clone https://github.com/akbarhmu/ElectroParadizo.git
-cd ElectroParadizo
+git clone https://github.com/akbarhmu/laravel-online-shop.git
+cd laravel-online-shop
 cp .env.example .env
 ```
 
@@ -85,4 +85,4 @@ Open http://localhost:8000 in browser, use email `admin@mail.com` and password `
 
 ## License
 
-`ElectroParadizo` is licensed under [The MIT license (MIT)](https://electro-paradizo.mit-license.org/).
+`Laravel Online Shop` is licensed under [The MIT license (MIT)](https://electro-paradizo.mit-license.org/).
