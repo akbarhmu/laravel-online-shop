@@ -10,7 +10,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
-        "kavist/rajaongkir": "dev-staging",
+        "kavist/rajaongkir": "dev-master",
         "laravel-lang/lang": "8.0",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^2.3",
@@ -67,6 +67,6 @@
     "prefer-stable": true,
     "repositories": [{
         "type": "vcs",
-        "url": "https://github.com/Gasiyu/rajaongkir"
+        "url": "https://github.com/akbarhmu/rajaongkir"
     }]
 }
